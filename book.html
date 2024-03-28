@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lodge Reservation - Moffat Bay Lodge</title>
+</head>
+<body>
+    <header>
+        <!-- Include header content -->
+    </header>
+
+    <main>
+        <h1>Book Your Vacation</h1>
+        <form action="reservation.php" method="post">
+            <label for="room_size">Room Size:</label>
+            <select id="room_size" name="room_size" required>
+                <option value="double_full">Double Full Beds</option>
+                <option value="queen">Queen</option>
+                <option value="double_queen">Double Queen Beds</option>
+                <option value="king">King</option>
+            </select>
+
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" min="1" max="5" required>
+
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">Check-out Date:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <button type="submit">Make Reservation</button>
+        </form>
+    </main>
+
+    <footer>
+        <!-- Include footer content -->
+    </footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation Lookup - Moffat Bay Lodge</title>
+</head>
+<body>
+    <header>
+        <!-- Include header content -->
+    </header>
+
+    <main>
+        <h1>Reservation Lookup</h1>
+        <form action="lookup_reservation.php" method="post">
+            <label for="reservation_id">Reservation ID:</label>
+            <input type="text" id="reservation_id" name="reservation_id">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <button type="submit">Search</button>
+        </form>
+
+        <?php
+        if (isset($reservation)) {
+            echo "<h2>Reservation Details:</h2>";
+            echo "<ul>";
+            echo "<li>Room Size: " . $reservation['room_size'] . "</li>";
+            echo "<li>Number of Guests: " . $reservation['guests'] . "</li>";
+            echo "<li>Check-in Date: " . $reservation['checkin'] . "</li>";
+            echo "<li>Check-out Date: " . $reservation['checkout'] . "</li>";
+            echo "</ul>";
+        }
+        ?>
+    </main>
+
+    <footer>
+        <!-- Include footer content -->
+    </footer>
+</body>
+</html>

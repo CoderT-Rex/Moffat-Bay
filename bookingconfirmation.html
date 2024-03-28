@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation Summary - Moffat Bay Lodge</title>
+</head>
+<body>
+    <header>
+        <!-- Include header content -->
+    </header>
+
+    <main>
+        <h1>Reservation Summary</h1>
+        <p>Thank you for your reservation at Moffat Bay Lodge!</p>
+
+        <h2>Reservation Details:</h2>
+        <ul>
+            <li>Room Size: <?php echo $room_size; ?></li>
+            <li>Number of Guests: <?php echo $guests; ?></li>
+            <li>Check-in Date: <?php echo $checkin; ?></li>
+            <li>Check-out Date: <?php echo $checkout; ?></li>
+        </ul>
+
+        <form action="confirm_reservation.php" method="post">
+            <button type="submit">Confirm Reservation</button>
+        </form>
+
+        <form action="cancel_reservation.php" method="post">
+            <button type="submit">Cancel Reservation</button>
+        </form>
+    </main>
+
+    <footer>
+        <!-- Include footer content -->
+    </footer>
+</body>
+</html>
