@@ -19,6 +19,13 @@ body::before {
     z-index: -1; 
 }
 
+.container.bg-light {
+    max-width: 800px; /* Adjust width as needed */
+    margin: 2rem auto; /* Centering the box */
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adding some shadow for the "floating" effect */
+    border-radius: 8px; /* Optional: adds rounded corners */
+}
 
 .color-primary {
     color: #37989B !important;
