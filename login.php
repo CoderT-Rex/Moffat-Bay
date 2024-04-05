@@ -56,7 +56,7 @@
                         <input type="password" id="password" name="password" class="form-control" required>
                     </div>
                     <button type="submit" class="btn btn-light">Login</button>
-                    <a href="registration.html" class="btn btn-light">Need to Register?</a>
+                    <a href="registration.php" class="btn btn-light">Need to Register?</a>
                 </form>
             </div>
         </div>
