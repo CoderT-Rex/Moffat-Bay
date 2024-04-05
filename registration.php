@@ -73,7 +73,7 @@
                         <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
                     </div>
                     <button type="submit" class="btn btn-light">Register</button>
-                    <a href="login.html" class="btn btn-light">Already Registered?</a>
+                    <a href="login.php" class="btn btn-light">Already Registered?</a>
                 </form>
                 <script>
                     document.getElementById('registrationForm').addEventListener('submit', function(e) {
