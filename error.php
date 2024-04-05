@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <title>Contact Us - Maffet Bay Lodge</title>
+    <title>Login - Moffat Bay Lodge</title>
 </head>
 <body>
     <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
@@ -18,11 +18,22 @@
             
             <div class="main-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutus.html">About</a></li>
-                    <li><a href="attractions.html">Attractions</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="aboutus.php">About</a></li>
+                    <li><a href="attractions.php">Attractions</a></li>
+                    <li><a href="contactus.php">Contact Us</a></li>
+                    <?php
+                    session_start(); // Start the session
+                    //Check if the user is logged in
+                    if(isset($_SESSION['user_id'])) {
+                    // If logged in, display profile and logout links
+                    echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+                    echo '<li><a href="logout.php">Logout</a></li>';
+                    } else {
+                    // If not logged in, display the login link
+                    echo '<li><a href="login.php">Login</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -30,17 +41,7 @@
     <div class="container bg-light">
         <div class="row spacer">
             <div class="col-12 px-5 text-center">
-                <h1 class="color-primary underline-secondary">Contact Us</h1>
-            </div>
-        </div>
-        <div class="row pt-3 width-80">
-            <div class="col-12">
-                <p class="fs-24">Get in touch with Moffat Bay Lodge for inquiries, reservations, or any assistance you need.</p>
-                <ul class="list-unstyled fs-24">
-                    <li>Email: info@maffetbaylodge.com</li>
-                    <li>Phone: +1 (555) 123-4567</li>
-                    <li>Address:<br>420 Moffat Bay Road<br>Joviedsa Island, Washington 98250</li>
-                </ul>
+                <h1 class="color-primary">Sorry! We couldn't match your email or password! Please try again!</h1>
             </div>
         </div>
     </div>

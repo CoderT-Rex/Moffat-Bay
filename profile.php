@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <title>Reservation Lookup - Moffat Bay Lodge</title>
+    <title>Profile - Moffat Bay Lodge</title>
 </head>
 <body>
     <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
@@ -18,11 +18,22 @@
             
             <div class="main-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutus.html">About</a></li>
-                    <li><a href="attractions.html">Attractions</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="aboutus.php">About</a></li>
+                    <li><a href="attractions.php">Attractions</a></li>
+                    <li><a href="contactus.php">Contact Us</a></li>
+                    <?php
+                    session_start(); // Start the session
+                    //Check if the user is logged in
+                    if(isset($_SESSION['user_id'])) {
+                    // If logged in, display profile and logout links
+                    echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+                    echo '<li><a href="logout.php">Logout</a></li>';
+                    } else {
+                    // If not logged in, display the login link
+                    echo '<li><a href="login.php">Login</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -30,33 +41,23 @@
     <div class="container bg-light">
         <div class="row spacer">
             <div class="col-12 px-5 text-center">
-                <h1 class="color-primary underline-secondary">Reservation Lookup</h1>
+                <h1 class="color-primary underline-secondary">Login</h1>
             </div>
         </div>
         <div class="row pt-3 width-80">
             <div class="col-12">
-                <form action="lookup_reservation.php" method="post">
-                    <div class="mb-3">
-                        <label for="reservation_id" class="form-label">Reservation ID:</label>
-                        <input type="text" id="reservation_id" name="reservation_id" class="form-control">
-                    </div>
+                <form action="login.php" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control">
+                        <input type="email" id="email" name="email" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-light">Search</button>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-light">Login</button>
+                    <a href="registration.html" class="btn btn-light">Need to Register?</a>
                 </form>
-                <?php
-                if (isset($reservation)) {
-                    echo "<h2 class='color-primary mt-4'>Reservation Details:</h2>";
-                    echo "<ul class='list-unstyled fs-24'>";
-                    echo "<li>Room Size: " . $reservation['room_size'] . "</li>";
-                    echo "<li>Number of Guests: " . $reservation['guests'] . "</li>";
-                    echo "<li>Check-in Date: " . $reservation['checkin'] . "</li>";
-                    echo "<li>Check-out Date: " . $reservation['checkout'] . "</li>";
-                    echo "</ul>";
-                }
-                ?>
             </div>
         </div>
     </div>
@@ -101,5 +102,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        
+        <script>
+        // Function to check if the user is logged in (dummy function)
+        function isLoggedIn() {
+            if ($_SESSION['user_id'] != 'NULL') {
+            return true; // Assuming the user is not logged in by default
+            } else {
+            	return false; 
+            }
+        }
+
+        // Function to dynamically update the navigation menu
+        function updateMenu() {
+            const menuItems = document.getElementById('menuItems');
+            if (isLoggedIn()) {
+                // If user is logged in, display their username in the menu
+                const username = $_SESSION['']; // Replace with actual username
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = '#'; // Replace '#' with profile page link
+                link.textContent = username;
+                listItem.appendChild(link);
+                menuItems.appendChild(listItem);
+            } else {
+                // If user is not logged in, display the login link
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = 'login.html';
+                link.textContent = 'Login';
+                listItem.appendChild(link);
+                menuItems.appendChild(listItem);
+            }
+        }
+
+        // Call the function to update the menu when the page loads
+        window.onload = updateMenu;
+    </script>
 </body>
 </html>
