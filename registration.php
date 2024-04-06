@@ -46,7 +46,7 @@
         </div>
         <div class="row pt-3 width-80">
             <div class="col-12">
-                <form id="registrationForm" action="registration.php" method="post">
+                <form id="registrationForm" action="register.php" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
                         <input type="email" id="email" name="email" class="form-control" required>
