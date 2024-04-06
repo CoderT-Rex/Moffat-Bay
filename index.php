@@ -18,11 +18,22 @@
             
             <div class="main-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutus.html">About</a></li>
-                    <li><a href="attractions.html">Attractions</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="aboutus.php">About</a></li>
+                    <li><a href="attractions.php">Attractions</a></li>
+                    <li><a href="contactus.php">Contact Us</a></li>
+                    <?php
+                    session_start(); // Start the session
+                    //Check if the user is logged in
+                    if(isset($_SESSION['user_id'])) {
+                    // If logged in, display profile and logout links
+                    echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+                    echo '<li><a href="logout.php">Logout</a></li>';
+                    } else {
+                    // If not logged in, display the login link
+                    echo '<li><a href="login.php">Login</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -213,5 +224,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+     
 </body>
 </html>

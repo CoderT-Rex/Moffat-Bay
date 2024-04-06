@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <title>Login - Moffat Bay Lodge</title>
+    <title>About Us - Maffet Bay Lodge</title>
 </head>
 <body>
     <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
@@ -41,23 +41,17 @@
     <div class="container bg-light">
         <div class="row spacer">
             <div class="col-12 px-5 text-center">
-                <h1 class="color-primary underline-secondary">Login</h1>
+                <h1 class="color-primary underline-secondary">About Us</h1>
             </div>
         </div>
         <div class="row pt-3 width-80">
             <div class="col-12">
-                <form action="log.php" method="post">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password:</label>
-                        <input type="password" id="password" name="password" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-light">Login</button>
-                    <a href="registration.php" class="btn btn-light">Need to Register?</a>
-                </form>
+                <p class="fs-24">Moffat Bay Lodge is a stunning resort located in Joviedsa, one of the many beautiful San Juan Islands located in northern Washington. Built in 2023, expect
+        the latest amenities while being surrounded by breathtaking views and unforgettable experiences. Our lodge provides the perfect blend of modern luxury and timeless nature, providing fine dining 
+        restaurants in view of our bay and famous lighthouse. Embrace your adventurous side with hiking, swimming, diving, whale watching, and kayaking in our picturesque piece of paradise. 
+        It is an ideal destination for couples, families, nature enthusiasts, and those who just want to get away from the humdrum of everyday life.</p>
+        		<p class="fs-24">Moffat Bay can be reached by taking the Orca Islands Ferry from the Anacortes terminal. If flying into Seattle, the terminal is about a 2-hour drive north by car or bus. You can also
+        take a train to Mt. Vernon Washington and travel by bus from there. For those wanting an expedited experience, you can also fly directly into the San Juan Islands via Roche Harbor (RCE) or Friday Harbor (FRD). </p>
             </div>
         </div>
     </div>
@@ -102,6 +96,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-        
 </body>
 </html>
