@@ -12,7 +12,7 @@
     <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
         <div class="container">
             <div class="d-flex">
-                <img class="main-logo" src="images/logo.png" alt="Maffet Bay Lodge">
+                <img class="main-logo" src="Images/logo.png" alt="Maffet Bay Lodge">
                 <h2 class="d-inline mt-auto mb-auto color-primary">Moffat Bay Lodge</h2>
             </div>
             
@@ -46,7 +46,7 @@
         </div>
         <div class="row pt-3 width-80">
             <div class="col-12">
-                <form action="register.php" method="post">
+                <form id="registrationForm" action="register.php" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
                         <input type="email" id="email" name="email" class="form-control" required>
@@ -65,10 +65,37 @@
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password:</label>
-                        <input type="password" id="password" name="password" class="form-control" minlength="8" required>
+                        <div id="errorMessage"></div>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
                     </div>
                     <button type="submit" class="btn btn-light">Register</button>
+                    <a href="login.php" class="btn btn-light">Already Registered?</a>
                 </form>
+                <script>
+                    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+                        var password = document.getElementById('password').value;
+                        var confirmPassword = document.getElementById('confirm_password').value;
+                        var messageDiv = document.getElementById('errorMessage');
+                    
+                        if (!password.match(/(?=.*[a-z])(?=.*[A-Z]).{8,}/)) { // If password doesn't meet requirements
+                            e.preventDefault(); // Prevent the form from being submitted
+                            messageDiv.textContent = 'Password Must contain at least one uppercase and lowercase letter, and be 8 or more characters long.';
+                            messageDiv.style.color = 'red';
+                        }
+                        else if (password !== confirmPassword) { // If passwords don't match
+                            e.preventDefault(); // Prevent the form from being submitted
+                            messageDiv.textContent = 'Passwords do not match.';
+                            messageDiv.style.color = 'red';
+                        } else {
+                            // If they match, clear any error messages and submit
+                            messageDiv.textContent = '';
+                        }
+                    });
+                </script>
             </div>
         </div>
     </div>
@@ -77,7 +104,7 @@
         <div class="row width-80">
             <!-- Footer logo and description -->
             <div class="col-md-4 mb-3 ps-5">
-                <img src="images/logo.png" alt="Maffet Bay Lodge" class="footer-logo mb-2">
+                <img src="Images/logo.png" alt="Maffet Bay Lodge" class="footer-logo mb-2">
                 <small class="d-block mb-3">&copy; 2024 Maffet Bay Lodge. All rights reserved.</small>
             </div>
 
