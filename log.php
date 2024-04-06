@@ -49,8 +49,8 @@ if ($result->num_rows > 0) {
     var_dump($user);?><br /><?php
     echo "Raw Password: " . $password . "<br>";
     echo "Passwrod from BD: " . $user["password"] . "<br>";
-    
-    if ($password == $user['password']) {
+
+    if (password_verify($password, $user['password'])) {
         // Passwords match, authentication successful
         echo "Authentication successful!";
         $_SESSION['user_id'] = $user["first_name"]; //Store Customer's First name in the session as 'user_id'
