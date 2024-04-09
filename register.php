@@ -8,6 +8,7 @@ $pass = "password"; // Database password
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
+
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -54,7 +55,7 @@ if ($result->num_rows > 0) {
             //DEBUG STUFF!!!!
             var_dump($user);?><br /><?php
     echo "Raw Password: " . $password . "<br>";
-    echo "Passwrod from BD: " . $user["password"] . "<br>";
+    echo "Password from BD: " . $user["password"] . "<br>";
 
     if (password_verify($password, $user['password'])) {
         // Passwords match, authentication successful

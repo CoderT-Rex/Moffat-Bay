@@ -26,16 +26,9 @@ $password = $_POST['password'];
 try {
     $sql = "SELECT * FROM Customer WHERE email = '$email'";
     $result = $conn->query($sql);
-} catch(Exception $e) {
+} catch (Exception $e) {
     header("Location: error.php");
 }
-
-//DEBUG STUFF!!!!
-var_dump($email);
-?><br />
-<?php 
-var_dump($password);
-?><br /><?php
 
 // Sanitize inputs (you may use other sanitization methods as well)
 $email = mysqli_real_escape_string($conn, $email);
@@ -44,29 +37,21 @@ $password = mysqli_real_escape_string($conn, $password);
 if ($result->num_rows > 0) {
     // User found, compare passwords
     $user = $result->fetch_assoc();
-    
-    //DEBUG STUFF!!!!
-    var_dump($user);?><br /><?php
-    echo "Raw Password: " . $password . "<br>";
-    echo "Passwrod from BD: " . $user["password"] . "<br>";
 
     if (password_verify($password, $user['password'])) {
         // Passwords match, authentication successful
-        echo "Authentication successful!";
-        $_SESSION['user_id'] = $user["first_name"]; //Store Customer's First name in the session as 'user_id'
-        //DEBUG!!!!!
-        var_dump("user_id");
-        var_dump($_SESSION['user_id']);
+        $_SESSION['user_id'] = $user["first_name"]; // Store Customer's First name in the session as 'user_id'
         header("Location: index.php");
     } else {
         // Passwords do not match
-        header("Location: error.php");
+        header("Location: error.php?message=Invalid_credentials");
     }
-
+} else {
+    // User not found
+    header("Location: error.php?message=Email_not_found");
 }
 
 // Close database connection
 $conn->close();
-
 exit();
 ?>
