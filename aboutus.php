@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="container bg-light">
+    <div class="restricted-container bg-light">
         <div class="row spacer">
             <div class="col-12 px-5 text-center">
                 <h1 class="color-primary underline-secondary">About Us</h1>
@@ -52,6 +52,22 @@
         It is an ideal destination for couples, families, nature enthusiasts, and those who just want to get away from the humdrum of everyday life.</p>
         		<p class="fs-24">Moffat Bay can be reached by taking the Orca Islands Ferry from the Anacortes terminal. If flying into Seattle, the terminal is about a 2-hour drive north by car or bus. You can also
         take a train to Mt. Vernon Washington and travel by bus from there. For those wanting an expedited experience, you can also fly directly into the San Juan Islands via Roche Harbor (RCE) or Friday Harbor (FRD). </p>
+            </div>
+        </div>
+
+        <div class="row spacer">
+            <div class="col-12 px-5 text-center">
+                <h1 class="color-primary underline-secondary">Contact Us</h1>
+            </div>
+        </div>
+        <div class="row pt-3 width-80">
+            <div class="col-12">
+                <p class="fs-24">Get in touch with Moffat Bay Lodge for inquiries, reservations, or any assistance you need.</p>
+                <ul class="list-unstyled fs-24">
+                    <li>Email: info@maffetbaylodge.com</li>
+                    <li>Phone: +1 (555) 123-4567</li>
+                    <li>Address:<br>420 Moffat Bay Road<br>Joviedsa Island, Washington 98250</li>
+                </ul>
             </div>
         </div>
     </div>

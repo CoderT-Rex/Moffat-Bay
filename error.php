@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="container bg-light">
+    <div class="restricted-container bg-light">
         <div class="row spacer">
             <div class="col-12 px-5 text-center">
                 <h1 class="color-primary">Sorry! We couldn't match your email or password! Please try again!</h1>
