@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="restricted-container bg-light">
+    <div class="container bg-light">
         <div class="row spacer">
             <div class="col-12 px-5 text-center">
                 <h1 class="color-primary underline-secondary">Book Your Vacation</h1>
@@ -46,14 +46,14 @@
         </div>
         <div class="row pt-3 width-80">
             <div class="col-12">
-                <form action="reservation.php" method="post">
+                <form action="bookingconfirmation.php" method="post">
                     <div class="mb-3">
                         <label for="room_size" class="form-label">Room Size:</label>
                         <select id="room_size" name="room_size" class="form-select" required>
-                            <option value="double_full">Double Full Beds</option>
-                            <option value="queen">Queen</option>
-                            <option value="double_queen">Double Queen Beds</option>
-                            <option value="king">King</option>
+                            <option value="double full beds">Double Full Beds</option>
+                            <option value="queen bed">Queen</option>
+                            <option value="double queen beds">Double Queen Beds</option>
+                            <option value="king bed">King</option>
                         </select>
                     </div>
                     <div class="mb-3">

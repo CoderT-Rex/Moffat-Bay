@@ -3,7 +3,6 @@ body {
     padding: 0;
     position: relative; 
     background-color: #000; 
-    min-height: 100vh;
 }
 
 body::before {
@@ -20,12 +19,12 @@ body::before {
     z-index: -1; 
 }
 
-.restricted-container {
-    max-width: 800px; 
-    margin: 2rem auto; 
+.container.bg-light {
+    max-width: 800px; /* Adjust width as needed */
+    margin: 2rem auto; /* Centering the box */
     padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adding some shadow for the "floating" effect */
+    border-radius: 8px; /* Optional: adds rounded corners */
 }
 
 .color-primary {
@@ -124,7 +123,7 @@ footer {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     margin-left: -12px;
     margin-right: -12px;
-    padding-top: 70px;
+    margin-top: 70px;
 }
 
 footer a {
@@ -138,20 +137,4 @@ footer a:hover {
 
 footer h5 {
     margin-bottom: 1rem;
-}
-
-footer.text-light {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.tex-shadow-sm {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.text-shadow-lg {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.border-radius {
-    border-radius: 20px;
 }
