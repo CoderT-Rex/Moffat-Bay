@@ -25,6 +25,38 @@ BEGIN
 END //
 DELIMITER ;
 
+DELIMITER //
+
+-- Trigger to calculate total cost before inserting a new reservation
+CREATE TRIGGER before_insert_calculate_total_cost
+BEFORE INSERT ON MoffatBay.Reservation
+FOR EACH ROW
+BEGIN
+    DECLARE days INT;
+    -- Calculate the number of days between check_in_date and check_out_date
+    SET days = DATEDIFF(NEW.check_out_date, NEW.check_in_date);
+
+    -- Set the total cost based on cost_per_night and number of days
+    SET NEW.total_cost = NEW.cost_per_night * days;
+END //
+
+-- Trigger to calculate total cost before updating an existing reservation
+CREATE TRIGGER before_update_calculate_total_cost
+BEFORE UPDATE ON MoffatBay.Reservation
+FOR EACH ROW
+BEGIN
+    DECLARE days INT;
+    -- Calculate the number of days between check_in_date and check_out_date
+    SET days = DATEDIFF(NEW.check_out_date, NEW.check_in_date);
+
+    -- Set the total cost if cost_per_night or dates are changed
+    IF NEW.cost_per_night != OLD.cost_per_night OR NEW.check_in_date != OLD.check_in_date OR NEW.check_out_date != OLD.check_out_date THEN
+        SET NEW.total_cost = NEW.cost_per_night * days;
+    END IF;
+END //
+
+DELIMITER ;
+
 -- Populate an entry in 'Room' table
 INSERT INTO MoffatBay.Room (room_type, number_available) VALUES ('double full beds', '4');
 INSERT INTO MoffatBay.Room (room_type, number_available) VALUES ('queen bed', '4');
@@ -32,10 +64,10 @@ INSERT INTO MoffatBay.Room (room_type, number_available) VALUES ('double queen b
 INSERT INTO MoffatBay.Room (room_type, number_available) VALUES ('king bed', '4');
 
 -- Populate entries in 'Reservation' table
-INSERT INTO MoffatBay.Reservation (reservationID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night) VALUES ('1', '3', 'double full beds', '2024-03-30', '2024-04-01', NULL);
-INSERT INTO MoffatBay.Reservation (reservationID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night) VALUES ('2', '1', 'queen bed', '2024-03-30', '2024-04-01', NULL);
-INSERT INTO MoffatBay.Reservation (reservationID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night) VALUES ('3', '2', 'king bed', '2024-03-30', '2024-04-01', NULL);
-INSERT INTO MoffatBay.Reservation (reservationID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night) VALUES ('4', '5', 'double queen beds', '2024-03-30', '2024-04-01', NULL);
+INSERT INTO MoffatBay.Reservation (reservationID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost) VALUES ('1', '3', 'double full beds', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (reservationID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost) VALUES ('2', '1', 'queen bed', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (reservationID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost) VALUES ('3', '2', 'king bed', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (reservationID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost) VALUES ('4', '5', 'double queen beds', '2024-03-30', '2024-04-01', NULL, NULL);
 
 -- Populate entries in 'Customer' table
 INSERT INTO MoffatBay.Customer (email, password, first_name, last_name, phone, reservationID) VALUES ('john.doe@baymail.com', 'apples', 'John', 'Doe', '8684101229', '1');
