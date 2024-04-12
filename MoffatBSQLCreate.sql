@@ -31,7 +31,7 @@ CREATE TABLE MoffatBay.Reservation (
 CREATE TABLE MoffatBay.Customer (
     customerID int NOT NULL AUTO_INCREMENT,
     email varchar(70) NOT NULL,
-    password varchar(40) NOT NULL,
+    password varchar(255) NOT NULL,
     first_name varchar(40) NOT NULL,
     last_name varchar(40) NOT NULL,
     phone varchar(20) NOT NULL,
