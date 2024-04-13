@@ -88,9 +88,9 @@
 							required>
 					</div>
 					<div class="mb-3">
-						<label for="telephone" class="form-label">Telephone:</label> <input
+						<label for="telephone" class="form-label">10-Digit Telephone Number:</label> <input
 							type="tel" id="telephone" name="telephone" class="form-control"
-							required>
+							pattern="[0-9]{10}" required>
 					</div>
 					<div class="mb-3 position-relative">
 						<label for="password" class="form-label">Password:</label>
@@ -111,26 +111,6 @@
 					<button type="submit" class="btn btn-light">Register</button>
 					<a href="login.php" class="btn btn-light">Already Registered?</a>
 				</form>
-
-				<script>
-                    document.getElementById('registrationForm').addEventListener('submit', function(e) {
-                        var password = document.getElementById('password').value;
-                        var confirmPassword = document.getElementById('confirm_password').value;
-                        var messageDiv = document.getElementById('errorMessage');
-
-                        if (!password.match(/(?=.*[a-z])(?=.*[A-Z]).{8,}/)) {
-                            e.preventDefault();
-                            messageDiv.textContent = 'Password Must contain at least one uppercase and lowercase letter, and be 8 or more characters long.';
-                            messageDiv.style.color = 'red';
-                        } else if (password !== confirmPassword) {
-                            e.preventDefault();
-                            messageDiv.textContent = 'Passwords do not match.';
-                            messageDiv.style.color = 'red';
-                        } else {
-                            messageDiv.textContent = '';
-                        }
-                    });
-                </script>
 			</div>
 		</div>
 	</div>
@@ -171,11 +151,59 @@
 				</ul>
 			</div>
 		</div>
-	 </footer>
+	</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+            var telephone = document.getElementById('telephone').value;
+            var messageDiv = document.getElementById('errorMessage');
 
-    <script>
+            if (!password.match(/(?=.*[a-z])(?=.*[A-Z]).{8,}/)) {
+                e.preventDefault();
+                messageDiv.textContent = 'Password Must contain at least one uppercase and lowercase letter, and be 8 or more characters long.';
+                messageDiv.style.color = 'red';
+            } else if (password !== confirmPassword) {
+                e.preventDefault();
+                messageDiv.textContent = 'Passwords do not match.';
+                messageDiv.style.color = 'red';
+            } else if (!telephone.match(/^[0-9]{10}$/)) {
+                e.preventDefault();
+                messageDiv.textContent = 'Please enter a valid 10-digit phone number.';
+                messageDiv.style.color = 'red';
+            } else {
+                messageDiv.textContent = '';
+
+                e.preventDefault();
+
+                var form = this;
+                var formData = new FormData(form);
+
+                fetch('register.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'email_exists') {
+                        // Display the popup box for email already exists
+                        alert('The email is already registered. Please use a different email.');
+                    } else if (data.status === 'success') {
+                        // Registration and authentication successful, redirect to success page
+                        window.location.href = 'success.php';
+                    } else {
+                        // Handle other error scenarios
+                        alert('An error occurred during registration. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred during registration. Please try again.');
+                });
+            }
+        });
+
         var passwordInput = document.getElementById('password');
         var passwordRequirementsPopup = document.getElementById('passwordRequirementsPopup');
 
