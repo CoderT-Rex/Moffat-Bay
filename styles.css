@@ -200,3 +200,24 @@ footer.text-light {
   height: 50%; /* Adjust the height as needed */
   object-fit: cover;
 }
+
+.password-requirements-popup {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.password-requirements-popup p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}

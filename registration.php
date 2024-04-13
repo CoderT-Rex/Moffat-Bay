@@ -10,6 +10,27 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="styles.css">
 <title>Registration - Moffat Bay Lodge</title>
+<style>
+.password-requirements-popup {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	z-index: 999;
+}
+
+.password-requirements-popup p {
+	margin: 0;
+	font-size: 14px;
+	color: #333;
+}
+</style>
 </head>
 <body>
 	<div
@@ -41,6 +62,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="restricted-container bg-light">
 		<div class="row spacer">
 			<div class="col-12 px-5 text-center">
@@ -70,11 +92,16 @@
 							type="tel" id="telephone" name="telephone" class="form-control"
 							required>
 					</div>
-					<div class="mb-3">
+					<div class="mb-3 position-relative">
 						<label for="password" class="form-label">Password:</label>
 						<div id="errorMessage"></div>
 						<input type="password" id="password" name="password"
 							class="form-control" required>
+						<div id="passwordRequirementsPopup"
+							class="password-requirements-popup">
+							<p>Passwords should be at least 8 characters in length and
+								include one uppercase and one lowercase letter.</p>
+						</div>
 					</div>
 					<div class="mb-3">
 						<label for="confirm_password">Confirm Password:</label> <input
@@ -84,23 +111,22 @@
 					<button type="submit" class="btn btn-light">Register</button>
 					<a href="login.php" class="btn btn-light">Already Registered?</a>
 				</form>
+
 				<script>
                     document.getElementById('registrationForm').addEventListener('submit', function(e) {
                         var password = document.getElementById('password').value;
                         var confirmPassword = document.getElementById('confirm_password').value;
                         var messageDiv = document.getElementById('errorMessage');
-                    
-                        if (!password.match(/(?=.*[a-z])(?=.*[A-Z]).{8,}/)) { // If password doesn't meet requirements
-                            e.preventDefault(); // Prevent the form from being submitted
+
+                        if (!password.match(/(?=.*[a-z])(?=.*[A-Z]).{8,}/)) {
+                            e.preventDefault();
                             messageDiv.textContent = 'Password Must contain at least one uppercase and lowercase letter, and be 8 or more characters long.';
                             messageDiv.style.color = 'red';
-                        }
-                        else if (password !== confirmPassword) { // If passwords don't match
-                            e.preventDefault(); // Prevent the form from being submitted
+                        } else if (password !== confirmPassword) {
+                            e.preventDefault();
                             messageDiv.textContent = 'Passwords do not match.';
                             messageDiv.style.color = 'red';
                         } else {
-                            // If they match, clear any error messages and submit
                             messageDiv.textContent = '';
                         }
                     });
@@ -145,11 +171,21 @@
 				</ul>
 			</div>
 		</div>
-	</footer>
+	 </footer>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-		crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        var passwordInput = document.getElementById('password');
+        var passwordRequirementsPopup = document.getElementById('passwordRequirementsPopup');
+
+        passwordInput.addEventListener('input', function() {
+            if (passwordInput.value.length > 0) {
+                passwordRequirementsPopup.style.display = 'block';
+            } else {
+                passwordRequirementsPopup.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
