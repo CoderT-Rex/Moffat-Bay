@@ -16,7 +16,7 @@
 		class="navbar d-flex justify-content-between bg-light sticky-top py-3">
 		<div class="container">
 			<div class="d-flex">
-				<img class="main-logo" src="images/logo.png" alt="Maffet Bay Lodge">
+				<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
 				<!-- 
                         Maynard J. (2012). salish salmon
                     -->
@@ -290,7 +290,7 @@
 					<!-- 
                         Image by: ChatGPT
                         Source: ChatGPT
-                        Prompt: Create a logo for a lodge named "Maffet Bay Lodge." The logo should feature a serene, nature-inspired design with a color palette that evokes tranquility and elegance.
+                        Prompt: Create a logo for a lodge named "moffat Bay Lodge." The logo should feature a serene, nature-inspired design with a color palette that evokes tranquility and elegance.
                         Date: 2024-04-01
                     -->
 					<small class="d-block mb-3">&copy; 2024 Moffat Bay Lodge. All

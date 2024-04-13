@@ -12,16 +12,15 @@
     <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
         <div class="container">
             <div class="d-flex">
-                <img class="main-logo" src="images/logo.png" alt="Maffet Bay Lodge">
-                <h2 class="d-inline mt-auto mb-auto color-primary">Moffat Bay Lodge</h2>
+                <img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
             </div>
             
             <div class="main-menu">
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="aboutus.php">About</a></li>
-                    <li><a href="attractions.php">Attractions</a></li>
-                    <li><a href="contactus.php">Contact Us</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="aboutus.php">About</a></li>
+					<li><a href="attractions.php">Attractions</a></li>
+					<li><a href="book.php">Reservations</a></li>
                     <?php
                     session_start(); // Start the session
                     //Check if the user is logged in
@@ -68,18 +67,18 @@
         <div class="row width-80">
             <!-- Footer logo and description -->
             <div class="col-md-4 mb-3 ps-5">
-                <img src="images/logo.png" alt="Maffet Bay Lodge" class="footer-logo mb-2">
-                <small class="d-block mb-3">&copy; 2024 Maffet Bay Lodge. All rights reserved.</small>
+                <img src="images/logo.png" alt="moffat Bay Lodge" class="footer-logo mb-2">
+                <small class="d-block mb-3">&copy; 2024 Moffat Bay Lodge. All rights reserved.</small>
             </div>
 
             <!-- Footer navigation -->
             <div class="col-md-4 mb-3">
                 <h5>Links</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutus.html">About</a></li>
-                    <li><a href="attractions.html">Attractions</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="aboutus.php">About</a></li>
+					<li><a href="attractions.php">Attractions</a></li>
+					<li><a href="book.php">Reservations</a></li>
                 </ul>
             </div>
 
@@ -88,7 +87,7 @@
                 <h5>Contact Information</h5>
                 <ul class="list-unstyled text-small">
                     <li>Phone: (555) 123-4567</li>
-                    <li>Email: info@maffetbaylodge.com</li>
+                    <li>Email: info@moffatbaylodge.com</li>
                 </ul>
                 <h5>Follow Us</h5>
                 <!-- Social media links -->
