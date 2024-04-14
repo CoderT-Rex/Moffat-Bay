@@ -37,7 +37,7 @@
 		class="navbar d-flex justify-content-between bg-light sticky-top py-3">
 		<div class="container">
 			<div class="d-flex">
-				<img class="main-logo" src="Images/logo.png" alt="moffat Bay Lodge">
+				<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
 			</div>
 
 			<div class="main-menu">
@@ -119,7 +119,7 @@
 		<div class="row width-80">
 			<!-- Footer logo and description -->
 			<div class="col-md-4 mb-3 ps-5">
-				<img src="Images/logo.png" alt="moffat Bay Lodge"
+				<img src="images/logo.png" alt="moffat Bay Lodge"
 					class="footer-logo mb-2"> <small class="d-block mb-3">&copy; 2024
 					Moffat Bay Lodge. All rights reserved.</small>
 			</div>

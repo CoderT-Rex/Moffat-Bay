@@ -220,7 +220,7 @@
 							</div>
 							<div class="carousel-inner">
 								<div class="carousel-item active">
-									<img src="Images/queen-bed.png" class="d-block w-100" alt="...">
+									<img src="images/queen-bed.png" class="d-block w-100" alt="...">
 									<!-- Image by: ChatGPT 
 									Source: ChatGPT 
 									Prompt: Create an image of a queen bed, framed with rich, natural wood and topped with luxurious, plush bedding. The bed should be set against a serene, elegant backdrop and evoke a sense of comfort and relaxation. 
@@ -236,7 +236,7 @@
 									</div>
 								</div>
 								<div class="carousel-item">
-									<img src="Images/kingbed.png" class="d-block w-100" alt="...">
+									<img src="images/kingbed.png" class="d-block w-100" alt="...">
 									<!-- Image by: Openart.ai
                                      Prompt: king bed in a luxury cabin 
                                      Date/Time: 4/12/2024 at 1500 EST
@@ -251,7 +251,7 @@
 									</div>
 								</div>
 								<div class="carousel-item">
-									<img src="Images/twinbed.png" class="d-block w-100" alt="...">
+									<img src="images/twinbed.png" class="d-block w-100" alt="...">
 									<!--Staton, D. (2022, January 29). a bed in a bedroom next to a window. Unsplash. 
 									   https://unsplash.com/photos/a-bed-in-a-bedroom-next-to-a-window-WZ_stj4GWoU -->
 									<div class="carousel-caption d-none d-md-block">
