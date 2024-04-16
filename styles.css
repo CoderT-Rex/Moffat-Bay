@@ -1,140 +1,235 @@
 body {
-    margin: 0;
-    padding: 0;
-    position: relative; 
-    background-color: #000; 
+	margin: 0;
+	padding: 0;
+	position: relative;
+	background-color: #000;
+	min-height: 100vh;
 }
 
 body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('Images/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    z-index: -1; 
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('images/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+	z-index: -1;
 }
 
-.container.bg-light {
-    max-width: 800px; /* Adjust width as needed */
-    margin: 2rem auto; /* Centering the box */
-    padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adding some shadow for the "floating" effect */
-    border-radius: 8px; /* Optional: adds rounded corners */
+.restricted-container {
+	max-width: 800px;
+	margin: 2rem auto;
+	padding: 2rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
 }
 
 .color-primary {
-    color: #37989B !important;
+	color: #37989B !important;
 }
 
 .color-secondary {
-    color: #F4D791 !important;
+	color: #F4D791 !important;
 }
 
 .underline-secondary {
-    border-bottom: 2px solid #F4D791;
-    display: inline-block;
+	border-bottom: 2px solid #F4D791;
+	display: inline-block;
 }
 
 .border-right-secondary {
-    border-right: 2px solid #F4D791;
+	border-right: 2px solid #F4D791;
 }
 
 .btn-light {
-    background-color: #79ccbc !important;
-    color: whitesmoke !important;
+	background-color: #79ccbc !important;
+	color: whitesmoke !important;
 }
 
 .main-logo {
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
+	width: 40%;
+	height: 40%;
+	margin-right: 20px;
 }
 
 .navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 .main-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .main-menu li {
-    display: inline-block;
-    margin-right: 20px;
+	display: inline-block;
+	margin-right: 20px;
 }
 
 .main-menu a {
-    text-decoration: none;
-    color: inherit;
-    transition: border-bottom 0.3s;
-    font-size: 20px;
+	text-decoration: none;
+	color: inherit;
+	transition: border-bottom 0.3s;
+	font-size: 18px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
 }
 
 .main-menu a:hover {
-    border-bottom: 2px solid #333;
+	border-bottom: 2px solid #333;
 }
 
 .intro-paragraph {
-    font-size: 18px;
+	font-size: 18px;
 }
 
 .quote-paragraph {
-    padding: 40px;
-    font-size: 26px;
-    background-color: #f4d791;
-    border-radius: 20px;
-    color: whitesmoke;
+	padding: 40px;
+	font-size: 26px;
+	background-color: #f4d791;
+	border-radius: 20px;
+	color: whitesmoke;
 }
 
 .spacer {
-    padding-top: 70px;
+	padding-top: 70px;
 }
 
 .width-80 {
-    width: 80%;
-    margin: auto;
+	width: 80%;
+	margin: auto;
 }
 
 .accomodations-img-wrapper {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .accomodations-img-wrapper img {
-    width: 336px;
-    height: 336px;
-    border-radius: 20px;
+	width: 336px;
+	height: 336px;
+	border-radius: 20px;
 }
 
 .footer-logo {
-    width: 100px;
+	width: 300px;
+	height: auto;
 }
 
 footer {
-    background-color: #F4D791;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin-left: -12px;
-    margin-right: -12px;
-    margin-top: 70px;
+	background-color: #F4D791;
+	color: #fff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	margin-left: -12px;
+	margin-right: -12px;
+	padding-top: 70px;
 }
 
 footer a {
-    color: #fff;
+	color: #fff;
 }
 
 footer a:hover {
-    text-decoration: none;
-    color: #ddd;
+	text-decoration: none;
+	color: #ddd;
 }
 
 footer h5 {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
+}
+
+footer.text-light {
+	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.tex-shadow-sm {
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-lg {
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.border-radius {
+	border-radius: 20px;
+}
+
+.banner {
+	position: relative;
+	height: 500px;
+	overflow: hidden;
+}
+
+.banner img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.banner-overlay {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	width: 50%;
+	height: 100%;
+	background-image: linear-gradient(to right, rgba(55, 152, 155, 0.6), rgba(55, 152, 155, 0));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translate(-50%, -50%);
+}
+
+.banner-text {
+	color: white;
+	font-size: 48px;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-item {
+  width: 100%;
+  height: 50%; /* Adjust the height as needed */
+  object-fit: cover;
+}
+
+.password-requirements-popup {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.password-requirements-popup p {
+    margin: 0;
+    font-size: 14px; var password = document.getElementById('password').value;
+	var confirmPassword = document.getElementById('confirm_password').value;
+	var messageDiv = document.getElementById('errorMessage');
+
+	if (!password.match(/(?=.*[a-z])(?=.*[A-Z]).{8,}/)) { // If password doesn't meet requirements
+		e.preventDefault(); // Prevent the form from being submitted
+		messageDiv.textContent = 'Password Must contain at least one uppercase and lowercase letter, and be 8 or more characters long.';
+		messageDiv.style.color = 'red';
+	}
+	else if (password !== confirmPassword) { // If passwords don't match
+		e.preventDefault(); // Prevent the form from being submitted
+		messageDiv.textContent = 'Passwords do not match.';
+		messageDiv.style.color = 'red';
+    color: #333;
 }

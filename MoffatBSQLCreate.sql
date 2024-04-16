@@ -22,6 +22,7 @@ CREATE TABLE MoffatBay.Reservation (
     check_in_date DATE NOT NULL,
     check_out_date DATE NOT NULL,
     cost_per_night double,
+    total_cost double,
     PRIMARY KEY (reservationID),
     KEY reservationID_key (reservationID),
     CONSTRAINT room_type_fk FOREIGN KEY (room_type) REFERENCES Room (room_type)
@@ -31,7 +32,7 @@ CREATE TABLE MoffatBay.Reservation (
 CREATE TABLE MoffatBay.Customer (
     customerID int NOT NULL AUTO_INCREMENT,
     email varchar(70) NOT NULL,
-    password varchar(40) NOT NULL,
+    password varchar(255) NOT NULL,
     first_name varchar(40) NOT NULL,
     last_name varchar(40) NOT NULL,
     phone varchar(20) NOT NULL,
