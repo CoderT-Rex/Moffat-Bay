@@ -21,6 +21,7 @@ if ($conn->connect_error) {
 // Retrieve email and password from HTML form
 $email = $_POST['email'];
 $password = $_POST['password'];
+$_SESSION['uniqueID'] = $_POST['email'];
 
 // Query the database to retrieve user record
 try {
@@ -30,7 +31,7 @@ try {
     header("Location: error.php");
 }
 
-// Sanitize inputs (you may use other sanitization methods as well)
+// Sanitize inputs
 $email = mysqli_real_escape_string($conn, $email);
 $password = mysqli_real_escape_string($conn, $password);
 

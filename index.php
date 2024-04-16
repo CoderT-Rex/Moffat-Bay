@@ -16,7 +16,7 @@
 		class="navbar d-flex justify-content-between bg-light sticky-top py-3">
 		<div class="container">
 			<div class="d-flex">
-				<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
+				<img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
 				<!-- 
                         Maynard J. (2012). salish salmon
                     -->

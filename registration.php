@@ -59,10 +59,9 @@
                     }
                     ?>
                 </ul>
-			</div>
-		</div>
-	</div>
-
+            </div>
+        </div>
+    </div>
 	<div class="restricted-container bg-light">
 		<div class="row spacer">
 			<div class="col-12 px-5 text-center">

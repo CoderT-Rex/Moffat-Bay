@@ -38,17 +38,25 @@
                     }
                     ?>
                 </ul>
-			</div>
-		</div>
-	</div>
-	<div class="restricted-container bg-light">
-		<div class="row spacer">
-			<div class="col-12 px-5 text-center">
-				<h1 class="color-primary">Sorry! We couldn't match your email or
-					password! Please try again!</h1>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
+    <div class="restricted-container bg-light">
+        <div class="row spacer">
+            <div class="col-12 px-5 text-center">
+                <h1 class="color-primary">
+					<?php if (!empty($_SESSION['errors'])): ?>
+    					<div class="error-messages">
+        				<?php foreach ($_SESSION['errors'] as $error): ?>
+            			<p><?php echo htmlspecialchars($error); ?></p>
+        				<?php endforeach; ?>
+    					</div>
+    					<?php unset($_SESSION['errors']); // Clear errors after displaying ?>
+					<?php endif; ?>
+				</h1>
+            </div>
+        </div>
+    </div>
 
 	<footer class="text-light pt-4 pb-2">
 		<div class="row width-80">

@@ -218,6 +218,18 @@ footer.text-light {
 
 .password-requirements-popup p {
     margin: 0;
-    font-size: 14px;
+    font-size: 14px; var password = document.getElementById('password').value;
+	var confirmPassword = document.getElementById('confirm_password').value;
+	var messageDiv = document.getElementById('errorMessage');
+
+	if (!password.match(/(?=.*[a-z])(?=.*[A-Z]).{8,}/)) { // If password doesn't meet requirements
+		e.preventDefault(); // Prevent the form from being submitted
+		messageDiv.textContent = 'Password Must contain at least one uppercase and lowercase letter, and be 8 or more characters long.';
+		messageDiv.style.color = 'red';
+	}
+	else if (password !== confirmPassword) { // If passwords don't match
+		e.preventDefault(); // Prevent the form from being submitted
+		messageDiv.textContent = 'Passwords do not match.';
+		messageDiv.style.color = 'red';
     color: #333;
 }
