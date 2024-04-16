@@ -54,7 +54,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="restricted-container bg-light">
+		<div class="container bg-light">
 			<div class="row spacer">
 				<div class="col-md-7 d-flex flex-column mt-auto mb-auto px-5">
 					<h1 class="color-primary">Experience the Charm of Wilderness at

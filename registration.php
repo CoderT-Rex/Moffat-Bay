@@ -62,68 +62,6 @@
             </div>
         </div>
     </div>
-    <div class="container bg-light">
-        <div class="row spacer">
-            <div class="col-12 px-5 text-center">
-                <h1 class="color-primary underline-secondary">Registration</h1>
-            </div>
-        </div>
-        <div class="row pt-3 width-80">
-            <div class="col-12">
-                <form id="registrationForm" action="register.php" method="post">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="firstname" class="form-label">First Name:</label>
-                        <input type="text" id="firstname" name="firstname" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="lastname" class="form-label">Last Name:</label>
-                        <input type="text" id="lastname" name="lastname" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telephone" class="form-label">Telephone:</label>
-                        <input type="tel" id="telephone" name="telephone" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password:</label>
-                        <div id="errorMessage"></div>
-                        <input type="password" id="password" name="password" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="confirm_password">Confirm Password:</label>
-                        <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-light">Register</button>
-                    <a href="login.php" class="btn btn-light">Already Registered?</a>
-                </form>
-                <script>
-                    document.getElementById('registrationForm').addEventListener('submit', function(e) {
-                        var password = document.getElementById('password').value;
-                        var confirmPassword = document.getElementById('confirm_password').value;
-                        var messageDiv = document.getElementById('errorMessage');
-                    
-                        if (!password.match(/(?=.*[a-z])(?=.*[A-Z]).{8,}/)) { // If password doesn't meet requirements
-                            e.preventDefault(); // Prevent the form from being submitted
-                            messageDiv.textContent = 'Password Must contain at least one uppercase and lowercase letter, and be 8 or more characters long.';
-                            messageDiv.style.color = 'red';
-                        }
-                        else if (password !== confirmPassword) { // If passwords don't match
-                            e.preventDefault(); // Prevent the form from being submitted
-                            messageDiv.textContent = 'Passwords do not match.';
-                            messageDiv.style.color = 'red';
-                        } else {
-                            // If they match, clear any error messages and submit
-                            messageDiv.textContent = '';
-                        }
-                    });
-                </script>
-            </div>
-        </div>
-    </div>
-
 	<div class="restricted-container bg-light">
 		<div class="row spacer">
 			<div class="col-12 px-5 text-center">
