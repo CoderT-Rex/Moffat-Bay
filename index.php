@@ -16,7 +16,7 @@
 		class="navbar d-flex justify-content-between bg-light sticky-top py-3">
 		<div class="container">
 			<div class="d-flex">
-				<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
+				<img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
 				<!-- 
                         Maynard J. (2012). salish salmon
                     -->
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container bg-light">
+		<div class="restricted-container bg-light">
 			<div class="row spacer">
 				<div class="col-md-7 d-flex flex-column mt-auto mb-auto px-5">
 					<h1 class="color-primary">Experience the Charm of Wilderness at
