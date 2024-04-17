@@ -206,13 +206,13 @@
         var passwordInput = document.getElementById('password');
         var passwordRequirementsPopup = document.getElementById('passwordRequirementsPopup');
 
-        passwordInput.addEventListener('input', function() {
-            if (passwordInput.value.length > 0) {
-                passwordRequirementsPopup.style.display = 'block';
-            } else {
-                passwordRequirementsPopup.style.display = 'none';
-            }
+        passwordInput.addEventListener('focus', function() {
+            passwordRequirementsPopup.style.display = 'block';
         });
+
+		passwordInput.addEventListener('blur', function() {
+			passwordRequirementsPopup.style.display = 'none';
+		});
     </script>
 </body>
 </html>
