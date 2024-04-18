@@ -12,6 +12,15 @@
 <title>Lodge Reservation - Moffat Bay Lodge</title>
 </head>
 <body>
+	<?php
+        session_start(); // Start the session
+        // Check if the user is not logged in
+        if (!isset($_SESSION['user_id'])) {
+        // Redirect to the login page
+        header("Location: login.php");
+    exit; // Stop further execution of the script
+    }
+    ?>
 	<div
 		class="navbar d-flex justify-content-between bg-light sticky-top py-3">
 		<div class="container">
@@ -26,8 +35,6 @@
 					<li><a href="attractions.php">Attractions</a></li>
 					<li><a href="book.php">Reservations</a></li>
                     <?php
-                    session_start(); // Start the session
-                                     // Check if the user is logged in
                     if (isset($_SESSION['user_id'])) {
                         // If logged in, display profile and logout links
                         echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
