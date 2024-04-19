@@ -115,13 +115,13 @@
 						<li>Total Cost: $<?php echo $totalCost; ?></li>
 					</ul>
 					<div class="d-flex justify-content-center">
-						<form action="confirmReservation.php" method="post" class="me-3">
-							<button type="submit" class="btn btn-light">Confirm Reservation</button>
-						</form>
-						<form action="cancelReservation.php" method="post">
+						<form action="cancelReservation.php" method="post" style="padding-right: 30px;">
 							<!-- Hidden input to store the reservationID -->
     						<input type="hidden" name="reservationID" value="<?php echo $reservationID; ?>">
 							<button type="submit" class="btn btn-light">Cancel Reservation</button>
+						</form>
+						<form action="confirmReservation.php" method="post" class="me-3">
+							<button type="submit" class="btn btn-light">Confirm Reservation</button>
 						</form>
                 <?php 
             	}
