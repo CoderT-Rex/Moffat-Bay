@@ -1,3 +1,8 @@
+<!--
+    CSD460 - Red Team
+    Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+    This file displays a form for users to reserve a room at the lodge
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>

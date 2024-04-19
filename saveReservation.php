@@ -61,7 +61,7 @@ if (isset($_POST['room_size'], $_POST['guests'], $_POST['checkin'], $_POST['chec
 
 // Redirect if there are errors
 if (!empty($_SESSION['errors'])) {
-    header("Location: error.php"); // Redirect to an error page or back to form page to display errors
+    header("Location: error.php");
 }
 else {
     header("Location: bookingconfirmation.php"); // If no errors, send user to confirmation page

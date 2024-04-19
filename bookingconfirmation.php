@@ -1,3 +1,8 @@
+<!--
+    CSD460 - Red Team
+    Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+    This file displays reservation details to the user and gives them the option to save or cancel
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,14 +76,15 @@
 					$_SESSION['errors'][] = "Error getting reservation details: " . $stmt0->error;
 				}
 				else {
-					// Get the result set from the prepared statement
+					// Get the results from the query
     				$result = $stmt0->get_result();
 
-    				// Check if we have at least one row
+    				// Check for at least one row in the set
     				if ($result->num_rows > 0) {
         				// Fetch the data as an associative array
         				$reservationDetails = $result->fetch_assoc();
 
+						// Set variables for all the data in the returned row
 						$name = $_SESSION["user_id"];
 						$email = $_SESSION["uniqueID"];
 						$room_size = $reservationDetails["room_type"];
@@ -87,13 +93,14 @@
 						$checkout = $reservationDetails["check_out_date"];
 						$costPerNight = $reservationDetails["cost_per_night"];
 						$totalCost = $reservationDetails["total_cost"];
+
     				} else {
     					$_SESSION['errors'][] = "No reservation found with ID: $reservationID";
     				}
 				}
             	
 				if (!empty($_SESSION['errors'])) {
-					header("Location: error.php"); // Redirect to an error page or back to form page to display errors
+					header("Location: error.php"); // Redirect to error page or back to form page to display errors
 				}
             	else {
             	    ?>

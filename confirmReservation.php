@@ -1,3 +1,8 @@
+<!--
+    CSD460 - Red Team
+    Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+    This file displays confirmation that a reservation has been saved
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>

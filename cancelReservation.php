@@ -53,9 +53,8 @@ if (isset($_POST['reservationID'])) {
     $_SESSION['errors'][] = "Reservation not found.";
 }
 
-// Redirect if there are errors
 if (!empty($_SESSION['errors'])) {
-    header("Location: error.php"); // Redirect to an error page or back to form page to display errors
+    header("Location: error.php"); // Redirect if there are errors
 }
 else {
     header("Location: book.php"); // If no errors, send user to back to reservation page
