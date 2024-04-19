@@ -16,7 +16,7 @@ CREATE TABLE MoffatBay.Room (
 
 -- Create Reservation Table
 CREATE TABLE MoffatBay.Reservation (
-    reservationID varchar(40) NOT NULL,
+    reservationID int NOT NULL AUTO_INCREMENT,
     number_of_guests int NOT NULL,
     room_type varchar(40) NOT NULL,
     check_in_date DATE NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE MoffatBay.Customer (
     first_name varchar(40) NOT NULL,
     last_name varchar(40) NOT NULL,
     phone varchar(20) NOT NULL,
-    reservationID varchar(40),
+    reservationID int NULL,
     PRIMARY KEY (customerID),
     KEY customerID_key (customerID),
     CONSTRAINT reservationID_fk FOREIGN KEY (reservationID) REFERENCES Reservation (reservationID)
