@@ -41,7 +41,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="restricted-container bg-light">
+	<div class="bg-light container">
 		<div class="row spacer">
 			<div class="col-12 px-5 text-center">
 				<h1 class="color-primary underline-secondary">About Us</h1>
@@ -67,6 +67,129 @@
 					there. For those wanting an expedited experience, you can also fly
 					directly into the San Juan Islands via Roche Harbor (RCE) or Friday
 					Harbor (FRD).</p>
+			</div>
+		</div>
+
+		<div class="row spacer">
+			<div class="col-12 px-5 text-center">
+				<h1 class="color-primary underline-secondary">What We Offer</h1>
+			</div>
+		</div>
+		<div class="row pt-3 width-80">
+			<div class="col-6 d-flex flex-column mt-auto mb-auto">
+				<p class="fs-24">
+					Our lodge offers a variety of cabins to suit your needs. Whether
+					you are looking for a cozy cabin for two or a larger cabin for a
+					family, we have you covered. Our cabins are equipped with modern
+					amenities, including a kitchen, living room, and a private deck
+					with a view of the bay. We also offer a variety of room types,
+					including standard rooms, suites, and deluxe rooms. Our rooms are
+					designed to provide you with the utmost comfort and relaxation
+					during your stay. 
+				</p>
+			</div>
+			<div class="col-6">
+				<img src="images/cabins-about-us.jpeg" alt="Cabins at Moffat Bay Lodge"
+					class="img-fluid rounded">
+					<!-- 
+						Src: https://stock.adobe.com/search/images?filters%5Bcontent_type%3Aphoto%5D=1&hide_panel=true&k=bay+lodge+cabins&search_type=recentsearch&asset_id=754073270
+					 -->
+			</div>
+		</div>
+
+		<div class="row pt-3 width-80 mt-5">
+			<div class="col-6">
+				<img src="images/scenic-view.jpeg" alt="Mountain View at Moffat Bay Lodge"
+					class="img-fluid rounded">
+					<!-- 
+						Src: https://stock.adobe.com/search/images?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aimage%5D=1&k=scenic+mountain+view&order=relevance&safe_search=1&limit=100&search_page=1&search_type=usertyped&acp=&aco=scenic+mountain+view&get_facets=0&asset_id=697336176					 
+					-->
+			</div>
+			<div class="col-6 d-flex flex-column mt-auto mb-auto">
+				<p class="fs-24">
+					Our cabins are surrounded by scenic mountain views, providing a
+					peaceful and tranquil setting for your stay. You can enjoy
+					breathtaking sunsets from your private deck or take a leisurely
+					stroll through our lush gardens. For those looking to explore the
+					area, we offer a variety of outdoor activities, including hiking,
+					biking, and fishing. Our lodge is also home to a variety of
+					wildlife, including deer, eagles, and otters, making it the perfect
+					destination for nature lovers. Whether you are looking for a
+					relaxing getaway or an adventure-filled vacation, Moffat Bay Lodge
+					has something for everyone.
+				</p>
+			</div>
+		</div>
+
+		<div class="row spacer">
+			<div class="col-12 px-5 text-center">
+				<h1 class="color-primary underline-secondary">Our Team</h1>
+			</div>
+		</div>
+		<div class="row pt-3 width-80">
+			<div class="col-3">
+				<img src="images/Joshua.png" alt="Team Member 1"
+				class="img-fluid rounded">
+				<!-- 
+					Src: From Joshua Rex on Discord
+				 -->
+			</div>
+			<div class="col-9">
+				<h3 class="fs-24">Joshua Rex</h3>
+				<p class="fs-24">General Manager</p>
+				<p>
+					Joshua is the General Manager of Moffat Bay Lodge. He has over 20 years of experience in the hospitality industry and is dedicated to providing guests with an exceptional experience. Benjamin oversees all operations at the lodge and ensures that guests receive the highest level of service. He is passionate about creating a welcoming and relaxing environment for guests to enjoy.
+				</p>
+			</div>
+		</div>
+
+		<div class="row pt-3 width-80">
+			<div class="col-3">
+				<img src="images/Benjamin.jpg" alt="Team Member 2"
+					class="img-fluid rounded">
+				<!--
+					Src: From Benjamin Andrew on Discord
+				 -->
+			</div>
+			<div class="col-9">
+				<h3 class="fs-24">Benjamin Andrew</h3>
+				<p class="fs-24">Sales Manager</p>
+				<p>
+					Benjamin is the Sales Manager at Moffat Bay Lodge, where he brings over two decades of expertise in the hospitality industry to his role. Tasked with driving the lodge's sales efforts, Benjamin develops and implements strategies to enhance guest acquisition and retention. He is committed to ensuring that every visitor experiences top-tier service, and his passion for fostering a warm and inviting atmosphere is evident in his approach to guest relations. Under his leadership, the sales team is motivated to achieve excellence and exceed targets, further establishing the lodge as a premier destination.					
+				</p>
+			</div>
+		</div>
+
+		<div class="row pt-3 width-80">
+			<div class="col-3">
+				<img src="images/wyatt.jpg" alt="Team Member 3"
+					class="img-fluid rounded">
+				<!--
+					Src: From Wyatt Hudgins on LinkedIn
+				 -->
+			</div>
+			<div class="col-9">
+				<h3 class="fs-24">Wyatt Hudgins</h3>
+				<p class="fs-24">Team Member</p>
+				<p>
+					Wyatt is a key team member at Moffat Bay Lodge, boasting ten years of experience in maintaining the pristine condition of the lodge’s grounds. His role is crucial in managing the various landscapes that enhance the beauty and appeal of the property. Dedicated to upholding the highest standards of outdoor aesthetics, Wyatt ensures that all areas are well-kept and welcoming for guests. His expertise in groundskeeping contributes significantly to the overall guest experience, making Moffat Bay Lodge a visually enchanting retreat.
+				</p>
+			</div>
+		</div>
+
+		<div class="row pt-3 width-80">
+			<div class="col-3">
+				<img src="images/taylor.jpg" alt="Team Member 3"
+					class="img-fluid rounded">
+				<!--
+					Src: From Taylor Nairn on Discord
+				 -->
+			</div>
+			<div class="col-9">
+				<h3 class="fs-24">Taylor Nairn</h3>
+				<p class="fs-24">Head Chef</p>
+				<p>
+					Taylor is the Head Chef at the Moffat Bay Lodge restaurant, where he brings a decade of culinary expertise to the table. With ten years of experience in creating exquisite dishes, he is pivotal in defining the dining experience at the lodge. Taylor’s passion for gastronomy shines through in his innovative menus that highlight local ingredients and flavors. His leadership in the kitchen ensures that each meal is not just nourishing but a memorable part of the guests' stay at Moffat Bay. Taylor's commitment to culinary excellence helps set the lodge apart as a destination for both outstanding hospitality and exceptional dining.				</p>
 			</div>
 		</div>
 
