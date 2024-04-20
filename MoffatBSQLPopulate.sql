@@ -1,4 +1,5 @@
--- Benjamin Andrew, Moffat Bay Project, Module 5, 30 March 2024
+-- Benjamin Andrew, Taylor Nairn, Wyatt Hudgins, Joshua Rex
+-- Moffat Bay Project, Module 5, 30 March 2024
 -- This version is a test of the database to ensure all functions as intended
 
 -- Determine room cost by number of guests

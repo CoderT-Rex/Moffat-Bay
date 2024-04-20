@@ -30,7 +30,7 @@ if (isset($_POST['room_size'], $_POST['guests'], $_POST['checkin'], $_POST['chec
     $checkout = $conn->real_escape_string($_POST['checkout']);
     $email = $conn->real_escape_string($_SESSION['uniqueID']);
     
-    $stmt1 = $conn->prepare("INSERT INTO Reservation (number_of_guests, room_type, check_in_date, check_out_date) VALUES (?, ?, ?, ?)");
+    $stmt1 = $conn->prepare("INSERT INTO Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost) VALUES (?, ?, ?, ?, NULL, NULL)");
     if ($stmt1) {
         $stmt1->bind_param("isss", $guests, $room_size, $checkin, $checkout);
         if (!$stmt1->execute()) {

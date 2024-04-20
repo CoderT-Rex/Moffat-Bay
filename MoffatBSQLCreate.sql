@@ -1,4 +1,5 @@
--- Benjamin Andrew, Moffat Bay Project, Module 5, 30 March 2024
+-- Benjamin Andrew, Taylor Nairn, Wyatt Hudgins, Joshua Rex
+-- Moffat Bay Project, Module 5, 30 March 2024
 
 -- Drop existing shop database, RESETS DATABASE INFORMATION
 DROP DATABASE IF EXISTS MoffatBay;
