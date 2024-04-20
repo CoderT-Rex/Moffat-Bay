@@ -65,10 +65,15 @@ INSERT INTO MoffatBay.Room (room_type, number_available) VALUES ('double queen b
 INSERT INTO MoffatBay.Room (room_type, number_available) VALUES ('king bed', '4');
 
 -- Populate entries in 'Reservation' table
-INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost) VALUES ('3', 'double full beds', '2024-03-30', '2024-04-01', NULL, NULL);
-INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost) VALUES ('1', 'queen bed', '2024-03-30', '2024-04-01', NULL, NULL);
-INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost) VALUES ('2', 'king bed', '2024-03-30', '2024-04-01', NULL, NULL);
-INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost) VALUES ('5', 'double queen beds', '2024-03-30', '2024-04-01', NULL, NULL);
+-- Populate entries in 'Reservation' table
+INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES (3, 'double full beds', '2024-03-30', '2024-04-01', 150.00, 300.00);
+INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES (1, 'queen bed', '2024-03-30', '2024-04-01', 115.00, 230.00);
+INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES (2, 'king bed', '2024-03-30', '2024-04-01', 115.00, 230.00);
+INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES (5, 'double queen beds', '2024-03-30', '2024-04-01', 150.00, 300.00);
 
 -- Populate entries in 'Customer' table
 INSERT INTO MoffatBay.Customer (email, password, first_name, last_name, phone, reservationID) VALUES ('john.doe@baymail.com', 'apples', 'John', 'Doe', '8684101229', '1');
