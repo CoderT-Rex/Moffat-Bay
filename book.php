@@ -1,5 +1,8 @@
-tml
-Copy code
+<!--
+    CSD460 - Red Team
+    Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+    This file displays a form for users to reserve a room at the lodge
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +56,7 @@ Copy code
     </div>
     <div class="row pt-3 width-80">
         <div class="col-12">
-            <form action="bookingconfirmation.php" method="post">
+            <form action="saveReservation.php" method="post">
                 <div class="mb-3">
                     <label for="room_size" class="form-label">Room Size:</label>
                     <select id="room_size" name="room_size" class="form-select" required>
