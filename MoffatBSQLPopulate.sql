@@ -64,20 +64,19 @@ INSERT INTO MoffatBay.Room (room_type, number_available) VALUES ('queen bed', '4
 INSERT INTO MoffatBay.Room (room_type, number_available) VALUES ('double queen beds', '4');
 INSERT INTO MoffatBay.Room (room_type, number_available) VALUES ('king bed', '4');
 
--- Populate entries in 'Reservation' table
--- Populate entries in 'Reservation' table
-INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
-VALUES (3, 'double full beds', '2024-03-30', '2024-04-01', 150.00, 300.00);
-INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
-VALUES (1, 'queen bed', '2024-03-30', '2024-04-01', 115.00, 230.00);
-INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
-VALUES (2, 'king bed', '2024-03-30', '2024-04-01', 115.00, 230.00);
-INSERT INTO MoffatBay.Reservation (number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
-VALUES (5, 'double queen beds', '2024-03-30', '2024-04-01', 150.00, 300.00);
-
 -- Populate entries in 'Customer' table
-INSERT INTO MoffatBay.Customer (email, password, first_name, last_name, phone, reservationID) VALUES ('john.doe@baymail.com', 'apples', 'John', 'Doe', '8684101229', '1');
-INSERT INTO MoffatBay.Customer (email, password, first_name, last_name, phone, reservationID) VALUES ('tracy.smith@baymail.com', 'password', 'Tracy', 'Smith', '6419940969', '2');
-INSERT INTO MoffatBay.Customer (email, password, first_name, last_name, phone, reservationID) VALUES ('Jknight@yippee.com', 'BugFriendz13', 'Jenifer', 'Knight', '2972197680', '3');
-INSERT INTO MoffatBay.Customer (email, password, first_name, last_name, phone, reservationID) VALUES ('goodall@aoe.biz.com', 'Persian3l3phants', 'Samuel', 'Goodall', '1671166685', '4');
-INSERT INTO MoffatBay.Customer (email, password, first_name, last_name, phone, reservationID) VALUES ('smith.lexington@dod.gov', '!@#$1234ASdf', 'Smith', 'Lexington', '8751572215', NULL);
+INSERT INTO MoffatBay.Customer (customerID, email, password, first_name, last_name, phone) VALUES ('1', 'john.doe@baymail.com', 'apples', 'John', 'Doe', '8684101229');
+INSERT INTO MoffatBay.Customer (customerID, email, password, first_name, last_name, phone) VALUES ('2', 'tracy.smith@baymail.com', 'password', 'Tracy', 'Smith', '6419940969');
+INSERT INTO MoffatBay.Customer (customerID, email, password, first_name, last_name, phone) VALUES ('3', 'Jknight@yippee.com', 'BugFriendz13', 'Jenifer', 'Knight', '2972197680');
+INSERT INTO MoffatBay.Customer (customerID, email, password, first_name, last_name, phone) VALUES ('4', 'goodall@aoe.biz.com', 'Persian3l3phants', 'Samuel', 'Goodall', '1671166685');
+INSERT INTO MoffatBay.Customer (customerID, email, password, first_name, last_name, phone) VALUES ('5', 'smith.lexington@dod.gov', '!@#$1234ASdf', 'Smith', 'Lexington', '8751572215');
+
+-- Populate entries in 'Reservation' table
+INSERT INTO MoffatBay.Reservation (reservationID, customerID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES ('1', '1', '3', 'double full beds', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (reservationID, customerID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES ('2', '2', '1', 'queen bed', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (reservationID, customerID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES ('3', '2', '2', 'king bed', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (reservationID, customerID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES ('4', '4', '5', 'double queen beds', '2024-03-30', '2024-04-01', NULL, NULL);

@@ -79,6 +79,7 @@
                     <input type="date" id="checkout" name="checkout" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-light">Make Reservation</button>
+                <a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
             </form>
         </div>
     </div>
@@ -122,17 +123,20 @@
 </footer>
 
 <script>
-    function toggleCheckout() {
-        var checkinDate = document.getElementById('checkin').value;
-        var checkoutDiv = document.getElementById('checkoutDiv');
-        var checkoutInput = document.getElementById('checkout');
-        if (checkinDate !== "") {
-            checkoutDiv.style.display = 'block';
-            checkoutInput.setAttribute('min', checkinDate);
-        } else {
-            checkoutDiv.style.display = 'none';
-        }
+function toggleCheckout() {
+    var checkinDate = document.getElementById('checkin').value;
+    var checkoutDiv = document.getElementById('checkoutDiv');
+    var checkoutInput = document.getElementById('checkout');
+    if (checkinDate !== "") {
+        var newCheckinDate = new Date(checkinDate);
+        newCheckinDate.setDate(newCheckinDate.getDate() + 1); // Add one day
+        var formattedDate = newCheckinDate.toISOString().substr(0, 10); // Format date as YYYY-MM-DD
+        checkoutInput.setAttribute('min', formattedDate);
+        checkoutDiv.style.display = 'block';
+    } else {
+        checkoutDiv.style.display = 'none';
     }
+}
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

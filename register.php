@@ -19,6 +19,7 @@ $firstName = $conn->real_escape_string($_POST['firstname']); // Sanitize input
 $lastName = $conn->real_escape_string($_POST['lastname']); // Sanitize input
 $telephone = $conn->real_escape_string($_POST['telephone']); // Sanitize input
 $password = $conn->real_escape_string($_POST['password']); // Sanitize input
+$_SESSION['uniqueID'] = $_POST['email'];
 
 // Encrypt the password
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);

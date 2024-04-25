@@ -42,6 +42,7 @@ if ($result->num_rows > 0) {
     if (password_verify($password, $user['password'])) {
         // Passwords match, authentication successful
         $_SESSION['user_id'] = $user["first_name"]; // Store Customer's First name in the session as 'user_id'
+        $_SESSION['custID'] = $user["customerID"]; //Store Customer's ID in the Session.
         header("Location: index.php");
     } else {
         // Passwords do not match
