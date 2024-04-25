@@ -37,6 +37,7 @@ if ($result_customer->num_rows == 0) {
     // Email found, get the customerID
     $customer = $result_customer->fetch_assoc();
     $customerID = $customer['customerID'];
+}
     
     // Check if the reservation ID is associated with that customerID
     $stmt = $conn->prepare("SELECT * FROM Reservation WHERE customerID = ?");
@@ -44,19 +45,24 @@ if ($result_customer->num_rows == 0) {
     $stmt->execute();
     $result_reservation = $stmt->get_result();
     
+    $reservations = array(); // Initialize an array to store all reservations
+    
     if ($result_reservation->num_rows == 0) {
-        // Reservation ID not associated with the provided customerID
-        $_SESSION['error_message'] = "Error: Reservation not found or not associated with the provided email.";
+        // No reservations found for the provided customerID
+        $_SESSION['error_message'] = "Error: No reservations found for the provided customerID.";
         header('Location: lookup.php');
+        exit(); // Make sure to exit after redirection
     } else {
-        // Reservation ID associated with the customerID, fetch reservation details
-        $reservation = $result_reservation->fetch_assoc();
-        // Store reservation details in session
-        $_SESSION['reservation'] = $reservation;
+        // Fetch all reservations and store them in the array
+        while ($row = $result_reservation->fetch_assoc()) {
+            $reservations[] = $row;
+        }
+        // Store reservations array in session
+        $_SESSION['reservations'] = $reservations;
         // Redirect to the page to display reservation details
         header('Location: lookup.php');
+        exit(); // Make sure to exit after redirection
     }
-}
 
 // Close the database connection
 $stmt->close();

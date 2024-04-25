@@ -19,7 +19,6 @@ $firstName = $conn->real_escape_string($_POST['firstname']); // Sanitize input
 $lastName = $conn->real_escape_string($_POST['lastname']); // Sanitize input
 $telephone = $conn->real_escape_string($_POST['telephone']); // Sanitize input
 $password = $conn->real_escape_string($_POST['password']); // Sanitize input
-$_SESSION['uniqueID'] = $_POST['email'];
 
 // Encrypt the password
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -57,6 +56,8 @@ if ($result->num_rows > 0) {
             if (password_verify($password, $user['password'])) {
                 // Passwords match, authentication successful
                 $_SESSION['user_id'] = $user["first_name"]; // Store Customer's First name in the session as 'user_id'
+                $_SESSION['uniqueID'] = $_POST['email']; // Store User's Email Address
+                $_SESSION['custID'] = $user["customerID"]; //Store Customer's ID in the Session.
                 echo json_encode(['status' => 'success']);
                 exit();
             } else {

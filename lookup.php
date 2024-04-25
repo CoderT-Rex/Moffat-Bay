@@ -74,12 +74,13 @@
                 unset($_SESSION['error_message']);
             }
             if (isset($_SESSION['reservation'])) {
-                $reservation = $_SESSION['reservation'];
+                $reservations = $_SESSION['reservation'];
                 ?>
                 <h2 class='color-primary mt-4'>Reservation Details:</h2>
+                <?php foreach ($reservations as $reservation) {?>
                 <table class="table table-striped">
                     <tbody>
-                        <tr>
+                    	<tr>
                             <th scope="row">Room Size</th>
                             <td><?php echo $reservation['room_type']; ?></td>
                         </tr>
@@ -105,6 +106,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <?php } ?>
                 <?php
                 $_SESSION['reservation'] = NULL;
                 $reservation = NULL;

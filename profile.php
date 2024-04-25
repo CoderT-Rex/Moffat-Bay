@@ -63,17 +63,17 @@
 			}
 
 			// Get user's first name from Session
-			$firName = $_SESSION['user_id'];
+			$cusID = $_SESSION['custID'];
 
 			// Prepare and execute the SQL query to retrieve user information
-			$stmt = $conn->prepare("SELECT * FROM Customer WHERE first_name = ?");
-			$stmt->bind_param("s", $firName);
+			$stmt = $conn->prepare("SELECT * FROM Customer WHERE customerID = ?");
+			$stmt->bind_param("i", $cusID);
 			$stmt->execute();
 			$result = $stmt->get_result();
 
 			// Prepare and execute the SQL query to retrieve reservation numbers
 			$stmt1 = $conn->prepare("SELECT reservationID FROM Reservation WHERE customerID = ?");
-			$stmt1->bind_param("i", $_SESSION['custID']);
+			$stmt1->bind_param("i", $cusID);
 			$stmt1->execute();
 			$result1 = $stmt1->get_result();
 
