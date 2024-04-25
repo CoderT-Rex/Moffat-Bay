@@ -15,20 +15,6 @@ CREATE TABLE MoffatBay.Room (
     key room_type_key (room_type)
 );
 
--- Create Reservation Table
-CREATE TABLE MoffatBay.Reservation (
-    reservationID int NOT NULL AUTO_INCREMENT,
-    number_of_guests int NOT NULL,
-    room_type varchar(40) NOT NULL,
-    check_in_date DATE NOT NULL,
-    check_out_date DATE NOT NULL,
-    cost_per_night double,
-    total_cost double,
-    PRIMARY KEY (reservationID),
-    KEY reservationID_key (reservationID),
-    CONSTRAINT room_type_fk FOREIGN KEY (room_type) REFERENCES Room (room_type)
-);
-
 -- Create Customer Table
 CREATE TABLE MoffatBay.Customer (
     customerID int NOT NULL AUTO_INCREMENT,
@@ -37,8 +23,24 @@ CREATE TABLE MoffatBay.Customer (
     first_name varchar(40) NOT NULL,
     last_name varchar(40) NOT NULL,
     phone varchar(20) NOT NULL,
-    reservationID int NULL,
     PRIMARY KEY (customerID),
     KEY customerID_key (customerID),
-    CONSTRAINT reservationID_fk FOREIGN KEY (reservationID) REFERENCES Reservation (reservationID)
 );
+
+-- Create Reservation Table
+CREATE TABLE MoffatBay.Reservation (
+    reservationID int NOT NULL AUTO_INCREMENT,
+    customerID int NOT NULL,
+    number_of_guests int NOT NULL,
+    room_type varchar(40) NOT NULL,
+    check_in_date DATE NOT NULL,
+    check_out_date DATE NOT NULL,
+    cost_per_night double,
+    total_cost double,
+    PRIMARY KEY (reservationID),
+    KEY reservationID_key (reservationID),
+    CONSTRAINT room_type_fk FOREIGN KEY (room_type) REFERENCES Room (room_type),
+    CONSTRAINT customerID_fk FOREIGN KEY (customerID) REFERENCES Customer (customerID)
+);
+
+
