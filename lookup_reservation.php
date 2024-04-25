@@ -13,6 +13,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// If both are empty throw error
+if(!isset($_POST['email']) && !isset($_POST['resNum'])) {
+    $_SESSION['error_message'] = "Please input either a Reservation ID or an Email.";
+    header('Location: lookup.php');
+}
+
 // Get data from registration form
 $email = $conn->real_escape_string($_POST['email']); // Sanitize Input
 $resNum = $conn->real_escape_string($_POST['resNum']); // Sanitize Input
@@ -33,14 +39,14 @@ if ($result_customer->num_rows == 0) {
     $customerID = $customer['customerID'];
     
     // Check if the reservation ID is associated with that customerID
-    $stmt = $conn->prepare("SELECT * FROM Reservation WHERE customerID = ? AND reservationID = ?");
-    $stmt->bind_param("ii", $customerID, $resNum);
+    $stmt = $conn->prepare("SELECT * FROM Reservation WHERE customerID = ?");
+    $stmt->bind_param("i", $customerID);
     $stmt->execute();
     $result_reservation = $stmt->get_result();
     
     if ($result_reservation->num_rows == 0) {
         // Reservation ID not associated with the provided customerID
-        $_SESSION['error_message'] = "Error: Reservation ID not found or not associated with the provided email.";
+        $_SESSION['error_message'] = "Error: Reservation not found or not associated with the provided email.";
         header('Location: lookup.php');
     } else {
         // Reservation ID associated with the customerID, fetch reservation details
