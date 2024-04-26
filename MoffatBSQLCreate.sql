@@ -24,7 +24,7 @@ CREATE TABLE MoffatBay.Customer (
     last_name varchar(40) NOT NULL,
     phone varchar(20) NOT NULL,
     PRIMARY KEY (customerID),
-    KEY customerID_key (customerID),
+    KEY customerID_key (customerID)
 );
 
 -- Create Reservation Table
