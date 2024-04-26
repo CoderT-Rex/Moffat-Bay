@@ -76,7 +76,7 @@
 			</div>
 		</div>
 		<div class="row pt-3 width-80">
-			<div class="col-6 d-flex flex-column mt-auto mb-auto">
+			<div class="col-md-6 d-flex flex-column mt-auto mb-auto">
 				<p class="fs-24">
 					Our lodge offers a variety of cabins to suit your needs. Whether
 					you are looking for a cozy cabin for two or a larger cabin for a
@@ -88,7 +88,7 @@
 					during your stay. 
 				</p>
 			</div>
-			<div class="col-6">
+			<div class="col-md-6">
 				<img src="images/cabins-about-us.jpeg" alt="Cabins at Moffat Bay Lodge"
 					class="img-fluid rounded">
 					<!-- 
@@ -98,14 +98,14 @@
 		</div>
 
 		<div class="row pt-3 width-80 mt-5">
-			<div class="col-6">
+			<div class="col-md-6">
 				<img src="images/scenic-view.jpeg" alt="Mountain View at Moffat Bay Lodge"
 					class="img-fluid rounded">
 					<!-- 
 						Src: https://stock.adobe.com/search/images?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aimage%5D=1&k=scenic+mountain+view&order=relevance&safe_search=1&limit=100&search_page=1&search_type=usertyped&acp=&aco=scenic+mountain+view&get_facets=0&asset_id=697336176					 
 					-->
 			</div>
-			<div class="col-6 d-flex flex-column mt-auto mb-auto">
+			<div class="col-md-6 d-flex flex-column mt-auto mb-auto">
 				<p class="fs-24">
 					Our cabins are surrounded by scenic mountain views, providing a
 					peaceful and tranquil setting for your stay. You can enjoy
@@ -127,14 +127,14 @@
 			</div>
 		</div>
 		<div class="row pt-3 width-80">
-			<div class="col-3">
+			<div class="col-md-3">
 				<img src="images/Joshua.png" alt="Team Member 1"
 				class="img-fluid rounded">
 				<!-- 
 					Src: From Joshua Rex on Discord
 				 -->
 			</div>
-			<div class="col-9">
+			<div class="col-md-9">
 				<h3 class="fs-24">Joshua Rex</h3>
 				<p class="fs-24">General Manager</p>
 				<p>
@@ -144,14 +144,14 @@
 		</div>
 
 		<div class="row pt-3 width-80">
-			<div class="col-3">
+			<div class="col-md-3">
 				<img src="images/Benjamin.jpg" alt="Team Member 2"
 					class="img-fluid rounded">
 				<!--
 					Src: From Benjamin Andrew on Discord
 				 -->
 			</div>
-			<div class="col-9">
+			<div class="col-md-9">
 				<h3 class="fs-24">Benjamin Andrew</h3>
 				<p class="fs-24">Sales Manager</p>
 				<p>
@@ -161,14 +161,14 @@
 		</div>
 
 		<div class="row pt-3 width-80">
-			<div class="col-3">
+			<div class="col-md-3">
 				<img src="images/wyatt.jpg" alt="Team Member 3"
 					class="img-fluid rounded">
 				<!--
 					Src: From Wyatt Hudgins on LinkedIn
 				 -->
 			</div>
-			<div class="col-9">
+			<div class="col-md-9">
 				<h3 class="fs-24">Wyatt Hudgins</h3>
 				<p class="fs-24">Team Member</p>
 				<p>
@@ -178,14 +178,14 @@
 		</div>
 
 		<div class="row pt-3 width-80">
-			<div class="col-3">
+			<div class="col-md-3">
 				<img src="images/taylor.jpg" alt="Team Member 3"
 					class="img-fluid rounded">
 				<!--
 					Src: From Taylor Nairn on Discord
 				 -->
 			</div>
-			<div class="col-9">
+			<div class="col-md-9">
 				<h3 class="fs-24">Taylor Nairn</h3>
 				<p class="fs-24">Head Chef</p>
 				<p>
