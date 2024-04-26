@@ -104,11 +104,6 @@ body::before {
 	padding-top: 70px;
 }
 
-.width-80 {
-	width: 80%;
-	margin: auto;
-}
-
 .accomodations-img-wrapper {
 	display: flex;
 	justify-content: center;
@@ -214,6 +209,13 @@ footer.text-light {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 999;
+}
+
+@media (min-width: 767px) {
+	.width-80 {
+		width: 80%;
+		margin: auto;
+	}
 }
 
 .password-requirements-popup p {
