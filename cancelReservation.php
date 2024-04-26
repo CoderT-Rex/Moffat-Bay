@@ -25,18 +25,6 @@ if (isset($_POST['reservationID'])) {
     $email = $_SESSION['uniqueID'];
     $reservationID = $_POST['reservationID'];
 
-    // Remove reservation foreign key from customer row
-    $stmt0 = $conn->prepare("UPDATE Customer SET reservationID = NULL WHERE email = ? AND reservationID = ?");
-    if ($stmt0) {
-        $stmt0->bind_param("si", $email, $reservationID);
-        if (!$stmt0->execute()) {
-            $_SESSION['errors'][] = "Error updating customer: " . $stmt0->error;
-        }
-        $stmt0->close();
-    } else {
-        $_SESSION['errors'][] = "Error preparing statement: " . $conn->error;
-    }
-
     // Delete row from reservation table
     $stmt1 = $conn->prepare("DELETE FROM Reservation WHERE reservationID = ?");
     if ($stmt1) {
@@ -55,8 +43,7 @@ if (isset($_POST['reservationID'])) {
 
 if (!empty($_SESSION['errors'])) {
     header("Location: error.php"); // Redirect if there are errors
-}
-else {
+} else {
     header("Location: book.php"); // If no errors, send user to back to reservation page
 }
 exit;
