@@ -31,9 +31,9 @@ if (isset($_POST['room_size'], $_POST['guests'], $_POST['checkin'], $_POST['chec
     $email = $conn->real_escape_string($_SESSION['uniqueID']);
     $custID = $conn->real_escape_string($_SESSION['custID']);
     
-    $stmt1 = $conn->prepare("INSERT INTO Reservation (customerID, number_of_guests, room_type, check_in_date, check_out_date) VALUES (?, ?, ?, ?, ?)");
+    $stmt1 = $conn->prepare("INSERT INTO Reservation ( room_type, customerID, number_of_guests, check_in_date, check_out_date) VALUES (?, ?, ?, ?, ?)");
     if ($stmt1) {
-        $stmt1->bind_param("iisss", $custID, $guests, $room_size, $checkin, $checkout);
+        $stmt1->bind_param("siiss", $room_size, $custID, $guests, $checkin, $checkout);
         if (!$stmt1->execute()) {
             $_SESSION['errors'][] = "Error inserting reservation: " . $stmt1->error;
         }

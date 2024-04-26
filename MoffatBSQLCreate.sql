@@ -30,9 +30,9 @@ CREATE TABLE MoffatBay.Customer (
 -- Create Reservation Table
 CREATE TABLE MoffatBay.Reservation (
     reservationID int NOT NULL AUTO_INCREMENT,
+    room_type varchar(40) NOT NULL,
     customerID int NOT NULL,
     number_of_guests int NOT NULL,
-    room_type varchar(40) NOT NULL,
     check_in_date DATE NOT NULL,
     check_out_date DATE NOT NULL,
     cost_per_night double,

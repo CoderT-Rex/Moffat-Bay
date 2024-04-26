@@ -2,6 +2,9 @@
 -- Moffat Bay Project, Module 5, 30 March 2024
 -- This version is a test of the database to ensure all functions as intended
 
+-- Select Database
+USE MoffatBay;
+
 -- Determine room cost by number of guests
 DELIMITER //
 CREATE TRIGGER calculate_cost
@@ -72,11 +75,11 @@ INSERT INTO MoffatBay.Customer (email, password, first_name, last_name, phone) V
 INSERT INTO MoffatBay.Customer (email, password, first_name, last_name, phone) VALUES ('smith.lexington@dod.gov', '!@#$1234ASdf', 'Smith', 'Lexington', '8751572215');
 
 -- Populate entries in 'Reservation' table
-INSERT INTO MoffatBay.Reservation (customerID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
-VALUES ('1', '3', 'double full beds', '2024-03-30', '2024-04-01', NULL, NULL);
-INSERT INTO MoffatBay.Reservation (customerID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
-VALUES ('2', '1', 'queen bed', '2024-03-30', '2024-04-01', NULL, NULL);
-INSERT INTO MoffatBay.Reservation (customerID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
-VALUES ('2', '2', 'king bed', '2024-03-30', '2024-04-01', NULL, NULL);
-INSERT INTO MoffatBay.Reservation (customerID, number_of_guests, room_type, check_in_date, check_out_date, cost_per_night, total_cost)
-VALUES ('4', '5', 'double queen beds', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (room_type, customerID, number_of_guests, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES ('double full beds', '1', '3', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (room_type, customerID,  number_of_guests, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES ('queen bed', '2', '1', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (room_type, customerID,  number_of_guests, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES ('king bed', '2', '2', '2024-03-30', '2024-04-01', NULL, NULL);
+INSERT INTO MoffatBay.Reservation (room_type, customerID,  number_of_guests, check_in_date, check_out_date, cost_per_night, total_cost)
+VALUES ('double queen beds', '4', '5', '2024-03-30', '2024-04-01', NULL, NULL);

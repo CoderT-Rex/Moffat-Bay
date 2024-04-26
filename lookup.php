@@ -56,6 +56,7 @@
 		</div>
 		<div class="row pt-3 width-80">
 			<div class="col-12">
+				<h4>Please input either a Reservation ID or an Email!</h4><br>
 				<form action="lookup_reservation.php" method="post">
 					<div class="mb-3">
 						<label for="resNum" class="form-label">Reservation ID:</label>
@@ -73,8 +74,8 @@
                 echo "<div class='alert alert-danger mt-3'>" . $_SESSION['error_message'] . "</div>";
                 unset($_SESSION['error_message']);
             }
-            if (isset($_SESSION['reservation'])) {
-                $reservations = $_SESSION['reservation'];
+            if (isset($_SESSION['reservations'])) {
+                $reservations = $_SESSION['reservations'];
                 ?>
                 <h2 class='color-primary mt-4'>Reservation Details:</h2>
                 <?php foreach ($reservations as $reservation) {?>
@@ -108,7 +109,7 @@
                 </table>
                 <?php } ?>
                 <?php
-                $_SESSION['reservation'] = NULL;
+                $_SESSION['reservations'] = NULL;
                 $reservation = NULL;
             }
             ?>

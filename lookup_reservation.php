@@ -14,14 +14,42 @@ if ($conn->connect_error) {
 }
 
 // If both are empty throw error
-if(!isset($_POST['email']) && !isset($_POST['resNum'])) {
+if($_POST['email'] === "" && $_POST['resNum'] === "") {
     $_SESSION['error_message'] = "Please input either a Reservation ID or an Email.";
     header('Location: lookup.php');
-}
-
+} elseif($_POST['email'] !== "" && $_POST['resNum'] !== "") {
+    $_SESSION['error_message'] = "Please input either a Reservation ID or an Email, not both.";
+    header('Location: lookup.php');
+} elseif($_POST['resNum'] !== "") {
+    $resNum = $conn->real_escape_string($_POST['resNum']); // Sanitize Input
+    
+    // Check if the reservation ID exists
+    $stmt = $conn->prepare("SELECT * FROM Reservation WHERE reservationID = ?");
+    $stmt->bind_param("i", $resNum);
+    $stmt->execute();
+    $result_reservation = $stmt->get_result();
+    
+    $reservations = array(); // Initialize an array to store all reservations
+    
+    if ($result_reservation->num_rows == 0) {
+        // No reservations found for the provided customerID
+        $_SESSION['error_message'] = "Error: No reservations found.";
+        header('Location: lookup.php');
+        exit(); // Make sure to exit after redirection
+    } else {
+        // Fetch all reservations and store them in the array
+        while ($row = $result_reservation->fetch_assoc()) {
+            $reservations[] = $row;
+        }
+        // Store reservations array in session
+        $_SESSION['reservations'] = $reservations;
+        // Redirect to the page to display reservation details
+        header('Location: lookup.php');
+        exit(); // Make sure to exit after redirection
+    } 
+} elseif($_POST['email'] !== "") {
 // Get data from registration form
 $email = $conn->real_escape_string($_POST['email']); // Sanitize Input
-$resNum = $conn->real_escape_string($_POST['resNum']); // Sanitize Input
 
 // Prepare SQL query to check if the email exists in the database and get customerID
 $stmt = $conn->prepare("SELECT * FROM Customer WHERE email = ?");
@@ -63,8 +91,11 @@ if ($result_customer->num_rows == 0) {
         header('Location: lookup.php');
         exit(); // Make sure to exit after redirection
     }
+}
+
 
 // Close the database connection
 $stmt->close();
 $conn->close();
 ?>
+
