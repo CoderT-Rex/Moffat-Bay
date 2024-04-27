@@ -1,4 +1,10 @@
 <?php
+/*
+    CSD460 - Red Team
+    Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+    This file handles the backend for registering a user
+*/
+
 session_start();
 
 $host = "localhost"; // Database host
@@ -37,7 +43,7 @@ if ($result->num_rows > 0) {
     // Email is unique, insert the new user
     $stmt = $conn->prepare("INSERT INTO Customer (email, password, first_name, last_name, phone) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $email, $hashed_password, $firstName, $lastName, $telephone);
-    
+
     if ($stmt->execute()) {
         // User registered successfully
         // Code that logs the user in after they register
@@ -48,11 +54,11 @@ if ($result->num_rows > 0) {
             echo json_encode(['status' => 'error']);
             exit();
         }
-        
+
         if ($result->num_rows > 0) {
             // User found, compare passwords
             $user = $result->fetch_assoc();
-            
+
             if (password_verify($password, $user['password'])) {
                 // Passwords match, authentication successful
                 $_SESSION['user_id'] = $user["first_name"]; // Store Customer's First name in the session as 'user_id'
@@ -72,11 +78,4 @@ if ($result->num_rows > 0) {
         exit();
     }
 }
-?>
-
-/*
-// After successful registration, send user back to home page
-header('Location: index.php');
-exit; // Ensure script execution ends here
-*/
 ?>
