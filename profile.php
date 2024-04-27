@@ -44,25 +44,83 @@
 	<div class="restricted-container bg-light">
 		<div class="row spacer">
 			<div class="col-12 px-5 text-center">
-				<h1 class="color-primary underline-secondary">Login</h1>
+				<h1 class="color-primary underline-secondary">Your Profile</h1>
 			</div>
 		</div>
 		<div class="row pt-3 width-80">
 			<div class="col-12">
-				<form action="login.php" method="post">
-					<div class="mb-3">
-						<label for="email" class="form-label">Email:</label> <input
-							type="email" id="email" name="email" class="form-control"
-							required>
-					</div>
-					<div class="mb-3">
-						<label for="password" class="form-label">Password:</label> <input
-							type="password" id="password" name="password"
-							class="form-control" required>
-					</div>
-					<button type="submit" class="btn btn-light">Login</button>
-					<a href="registration.html" class="btn btn-light">Need to Register?</a>
-				</form>
+			<?php 
+			$host = "localhost"; // Database host
+			$dbname = "MoffatBay"; // Database name
+			$user = "LodgeAdmin"; // Database username
+			$pass = "password"; // Database password
+
+			$conn = new mysqli($host, $user, $pass, $dbname);
+
+			// Check connection
+			if ($conn->connect_error) {
+			    die("Connection failed: " . $conn->connect_error);
+			}
+
+			// Get user's first name from Session
+			$cusID = $_SESSION['custID'];
+
+			// Prepare and execute the SQL query to retrieve user information
+			$stmt = $conn->prepare("SELECT * FROM Customer WHERE customerID = ?");
+			$stmt->bind_param("i", $cusID);
+			$stmt->execute();
+			$result = $stmt->get_result();
+
+			// Prepare and execute the SQL query to retrieve reservation numbers
+			$stmt1 = $conn->prepare("SELECT reservationID FROM Reservation WHERE customerID = ?");
+			$stmt1->bind_param("i", $cusID);
+			$stmt1->execute();
+			$result1 = $stmt1->get_result();
+
+			// Check if any rows were returned
+			if ($result->num_rows > 0) {
+			    // Start table with centering and spacing styles
+			    echo "<table class='table table-striped' style='margin: auto; width: 90%;'>";
+			    // Output the user's profile information
+			    while ($row = $result->fetch_assoc()) {
+			        echo "<tr>";
+			        echo "<th scope='row'>" . "First Name" . "</th><td>" . $row['first_name'] . "</td>";
+			        echo "</tr>";
+			        echo "<tr>";
+			        echo "<th scope='row'>" . "Last Name" . "</th><td>" . $row['last_name'] . "</td>";
+			        echo "</tr>";
+			        echo "<tr>";
+			        echo "<th scope='row'>" . "Email" . "</th><td>" . $row['email'] . "</td>";
+			        echo "</tr>";
+ 			       echo "<tr>";
+ 			       echo "<th scope='row'>" . "Phone" . "</th><td>" . $row['phone'] . "</td>";
+ 			       echo "</tr>";
+ 			       echo "<tr>";
+ 			       echo "<th scope='row'>" . "Reservation IDs" . "</th><td>";
+			        // Fetch and concatenate reservationIDs
+ 			       $reservationIDs = "";
+ 			       while ($row1 = $result1->fetch_assoc()) {
+ 			           $reservationIDs .= $row1['reservationID'] . ", ";
+			        }
+			        // Remove trailing comma and space
+			        $reservationIDs = rtrim($reservationIDs, ", ");
+			        echo $reservationIDs;
+			        echo "</td>";
+ 			       echo "</tr>";
+			    }
+			    // End table
+			    echo "</table>";
+			    echo "<br>";
+			} else {
+			    echo "No user found with the provided name.";
+			}
+
+			// Close the database connections
+			$stmt->close();
+			$stmt1->close();
+			$conn->close();
+			?>
+				<a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
 			</div>
 		</div>
 	</div>
