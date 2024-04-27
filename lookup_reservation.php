@@ -1,4 +1,10 @@
 <?php
+/*
+    CSD460 - Red Team
+    Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+    Professor Sue Sampson
+    Based on user input, this file searches the database for reservations
+*/
 session_start();
 
 $host = "localhost"; // Database host

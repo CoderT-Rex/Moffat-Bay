@@ -1,6 +1,7 @@
 <!--
     CSD460 - Red Team
     Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+    Professor Sue Sampson
     This file displays reservation details to the user and gives them the option to save or cancel
 -->
 <!DOCTYPE html>

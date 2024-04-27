@@ -1,6 +1,7 @@
 <!--
 	CSD460 - Red Team
 	Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+	Professor Sue Sampson
 	This file displays a form for users to login to their account
 -->
 

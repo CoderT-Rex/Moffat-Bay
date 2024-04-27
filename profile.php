@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<!--CSD460 - Red Team
+Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+Professor Sue Sampson 
+This code handles displaying user information when they are logged in-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
