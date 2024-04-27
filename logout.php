@@ -1,10 +1,11 @@
-<!--CSD460 - Red Team
-Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
-Professor Sue Sampson 
-This code allows a user to logout
--->
-
 <?php
+/*
+    CSD460 - Red Team
+    Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+    Professor Sue Sampson 
+    This code allows a user to logout
+*/
+
 // Unset all session variables
 session_unset();
 
