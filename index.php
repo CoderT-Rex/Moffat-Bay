@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--CSD460 - Red Team
+Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+Professor Sue Sampson 
+This code displays the landing page for the user
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">

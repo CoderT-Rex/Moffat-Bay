@@ -1,5 +1,8 @@
-<!-- Benjamin Andrew -->
-<!-- This php file will be utilized in future iterations to ensure that a user can properly log out -->
+<!--CSD460 - Red Team
+Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+Professor Sue Sampson 
+This code allows a user to logout
+-->
 
 <?php
 // Unset all session variables

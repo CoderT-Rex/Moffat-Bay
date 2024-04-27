@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--CSD460 - Red Team
+Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+Professor Sue Sampson 
+This code allows a user to lookup an existing reservation
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">

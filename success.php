@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--CSD460 - Red Team
+Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+CSD 460, Professor Sue Sampson
+This file handles confirms a sucessful account reservation
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">

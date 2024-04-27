@@ -1,4 +1,5 @@
 -- Benjamin Andrew, Taylor Nairn, Wyatt Hudgins, Joshua Rex
+-- CSD 460, Professor Sue Sampson
 -- Moffat Bay Project, Module 5, 30 March 2024
 
 -- Drop existing shop database, RESETS DATABASE INFORMATION

@@ -2,6 +2,7 @@
 /*
     CSD460 - Red Team
     Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
+    Professor Sue Sampson
     This file handles the backend for registering a user
 */
 
