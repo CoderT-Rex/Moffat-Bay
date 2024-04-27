@@ -1,10 +1,10 @@
-<!--
+<?php
+/*
     CSD460 - Red Team
     Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
     Professor Sue Sampson
     This file handles deleting a reservation from the database
--->
-<?php
+*/
 session_start(); // Start a new session or resume the existing one
 
 $host = "localhost"; // Database host

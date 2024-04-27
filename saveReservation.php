@@ -1,10 +1,11 @@
-<!--
+<?php
+/*
     CSD460 - Red Team
     Joshua Rex, Taylor Nairn, Benjamin Andrew, Wyatt Hudgins
     CSD 460, Professor Sue Sampson
     This file handles saving a new reservation to the database
--->
-<?php
+*/
+
 session_start(); // Start a new session or resume the existing one
 
 $host = "localhost"; // Database host
