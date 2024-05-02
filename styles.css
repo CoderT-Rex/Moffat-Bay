@@ -119,6 +119,8 @@ body::before {
 	width: 336px;
 	height: 336px;
 	border-radius: 20px;
+	object-fit: cover;
+    object-position: center;
 }
 
 .footer-logo {
