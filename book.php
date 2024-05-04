@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="styles.css">
 <title>Lodge Reservation - Moffat Bay Lodge</title>
 </head>
-<body>
+<body class="sticky-footer">
 <?php
     session_start(); // Start the session
     // Check if the user is not logged in
@@ -23,65 +23,67 @@
         exit; // Stop further execution of the script
     }
 ?>
-<div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
-    <div class="container">
-        <div class="d-flex">
-            <img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
-        </div>
-
-        <div class="main-menu">
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="aboutus.php">About</a></li>
-                <li><a href="attractions.php">Attractions</a></li>
-                <li><a href="book.php">Reservations</a></li>
-                <?php
-                if (isset($_SESSION['user_id'])) {
-                    // If logged in, display profile and logout links
-                    echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-                    echo '<li><a href="logout.php">Logout</a></li>';
-                } else {
-                    // If not logged in, display the login link
-                    echo '<li><a href="login.php">Login</a></li>';
-                }
-                ?>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="restricted-container bg-light">
-    <div class="row spacer">
-        <div class="col-12 px-5 text-center">
-            <h1 class="color-primary underline-secondary">Book Your Vacation</h1>
+<div class="main-content">
+    <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
+        <div class="container">
+            <div class="d-flex">
+                <img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
+            </div>
+    
+            <div class="main-menu">
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="aboutus.php">About</a></li>
+                    <li><a href="attractions.php">Attractions</a></li>
+                    <li><a href="book.php">Reservations</a></li>
+                    <?php
+                    if (isset($_SESSION['user_id'])) {
+                        // If logged in, display profile and logout links
+                        echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+                        echo '<li><a href="logout.php">Logout</a></li>';
+                    } else {
+                        // If not logged in, display the login link
+                        echo '<li><a href="login.php">Login</a></li>';
+                    }
+                    ?>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="row pt-3 width-80">
-        <div class="col-12">
-            <form action="saveReservation.php" method="post">
-                <div class="mb-3">
-                    <label for="room_size" class="form-label">Room Size:</label>
-                    <select id="room_size" name="room_size" class="form-select" required>
-                        <option value="double full beds">Double Full Beds</option>
-                        <option value="queen bed">Queen</option>
-                        <option value="double queen beds">Double Queen Beds</option>
-                        <option value="king bed">King</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="guests" class="form-label">Number of Guests:</label>
-                    <input type="number" id="guests" name="guests" class="form-control" min="1" max="5" required>
-                </div>
-                <div class="mb-3">
-                    <label for="checkin" class="form-label">Check-in Date:</label>
-                    <input type="date" id="checkin" name="checkin" class="form-control" min="<?php echo date('Y-m-d'); ?>" required onchange="toggleCheckout()">
-                </div>
-                <div class="mb-3" id="checkoutDiv" style="display: none;">
-                    <label for="checkout" class="form-label">Check-out Date:</label>
-                    <input type="date" id="checkout" name="checkout" class="form-control" required>
-                </div>
-                <button type="submit" class="btn btn-light">Make Reservation</button>
-                <a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
-            </form>
+    <div class="restricted-container bg-light">
+        <div class="row spacer">
+            <div class="col-12 px-5 text-center">
+                <h1 class="color-primary underline-secondary">Book Your Vacation</h1>
+            </div>
+        </div>
+        <div class="row pt-3 width-80">
+            <div class="col-12">
+                <form action="saveReservation.php" method="post">
+                    <div class="mb-3">
+                        <label for="room_size" class="form-label">Room Size:</label>
+                        <select id="room_size" name="room_size" class="form-select" required>
+                            <option value="double full beds">Double Full Beds</option>
+                            <option value="queen bed">Queen</option>
+                            <option value="double queen beds">Double Queen Beds</option>
+                            <option value="king bed">King</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="guests" class="form-label">Number of Guests:</label>
+                        <input type="number" id="guests" name="guests" class="form-control" min="1" max="5" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="checkin" class="form-label">Check-in Date:</label>
+                        <input type="date" id="checkin" name="checkin" class="form-control" min="<?php echo date('Y-m-d'); ?>" required onchange="toggleCheckout()">
+                    </div>
+                    <div class="mb-3" id="checkoutDiv" style="display: none;">
+                        <label for="checkout" class="form-label">Check-out Date:</label>
+                        <input type="date" id="checkout" name="checkout" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-light">Make Reservation</button>
+                    <a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
+                </form>
+            </div>
         </div>
     </div>
 </div>

@@ -15,116 +15,118 @@ This code handles displaying user information when they are logged in-->
 <link rel="stylesheet" href="styles.css">
 <title>Profile - Moffat Bay Lodge</title>
 </head>
-<body>
-	<div
-		class="navbar d-flex justify-content-between bg-light sticky-top py-3">
-		<div class="container">
-			<div class="d-flex">
-				<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
-			</div>
-
-			<div class="main-menu">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="aboutus.php">About</a></li>
-					<li><a href="attractions.php">Attractions</a></li>
-					<li><a href="book.php">Reservations</a></li>
-                    <?php
-                    session_start(); // Start the session
-                                     // Check if the user is logged in
-                    if (isset($_SESSION['user_id'])) {
-                        // If logged in, display profile and logout links
-                        echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-                        echo '<li><a href="logout.php">Logout</a></li>';
-                    } else {
-                        // If not logged in, display the login link
-                        echo '<li><a href="login.php">Login</a></li>';
-                    }
-                    ?>
-                </ul>
-			</div>
-		</div>
-	</div>
-	<div class="restricted-container bg-light">
-		<div class="row spacer">
-			<div class="col-12 px-5 text-center">
-				<h1 class="color-primary underline-secondary">Your Profile</h1>
+<body class="sticky-footer">
+	<div class="main-content">
+		<div
+			class="navbar d-flex justify-content-between bg-light sticky-top py-3">
+			<div class="container">
+				<div class="d-flex">
+					<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
+				</div>
+	
+				<div class="main-menu">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="aboutus.php">About</a></li>
+						<li><a href="attractions.php">Attractions</a></li>
+						<li><a href="book.php">Reservations</a></li>
+						<?php
+						session_start(); // Start the session
+										 // Check if the user is logged in
+						if (isset($_SESSION['user_id'])) {
+							// If logged in, display profile and logout links
+							echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+							echo '<li><a href="logout.php">Logout</a></li>';
+						} else {
+							// If not logged in, display the login link
+							echo '<li><a href="login.php">Login</a></li>';
+						}
+						?>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class="row pt-3 width-80">
-			<div class="col-12">
-			<?php 
-			$host = "localhost"; // Database host
-			$dbname = "MoffatBay"; // Database name
-			$user = "LodgeAdmin"; // Database username
-			$pass = "password"; // Database password
-
-			$conn = new mysqli($host, $user, $pass, $dbname);
-
-			// Check connection
-			if ($conn->connect_error) {
-			    die("Connection failed: " . $conn->connect_error);
-			}
-
-			// Get user's first name from Session
-			$cusID = $_SESSION['custID'];
-
-			// Prepare and execute the SQL query to retrieve user information
-			$stmt = $conn->prepare("SELECT * FROM Customer WHERE customerID = ?");
-			$stmt->bind_param("i", $cusID);
-			$stmt->execute();
-			$result = $stmt->get_result();
-
-			// Prepare and execute the SQL query to retrieve reservation numbers
-			$stmt1 = $conn->prepare("SELECT reservationID FROM Reservation WHERE customerID = ?");
-			$stmt1->bind_param("i", $cusID);
-			$stmt1->execute();
-			$result1 = $stmt1->get_result();
-
-			// Check if any rows were returned
-			if ($result->num_rows > 0) {
-			    // Start table with centering and spacing styles
-			    echo "<table class='table table-striped' style='margin: auto; width: 90%;'>";
-			    // Output the user's profile information
-			    while ($row = $result->fetch_assoc()) {
-			        echo "<tr>";
-			        echo "<th scope='row'>" . "First Name" . "</th><td>" . $row['first_name'] . "</td>";
-			        echo "</tr>";
-			        echo "<tr>";
-			        echo "<th scope='row'>" . "Last Name" . "</th><td>" . $row['last_name'] . "</td>";
-			        echo "</tr>";
-			        echo "<tr>";
-			        echo "<th scope='row'>" . "Email" . "</th><td>" . $row['email'] . "</td>";
-			        echo "</tr>";
- 			       echo "<tr>";
- 			       echo "<th scope='row'>" . "Phone" . "</th><td>" . $row['phone'] . "</td>";
- 			       echo "</tr>";
- 			       echo "<tr>";
- 			       echo "<th scope='row'>" . "Reservation IDs" . "</th><td>";
-			        // Fetch and concatenate reservationIDs
- 			       $reservationIDs = "";
- 			       while ($row1 = $result1->fetch_assoc()) {
- 			           $reservationIDs .= $row1['reservationID'] . ", ";
-			        }
-			        // Remove trailing comma and space
-			        $reservationIDs = rtrim($reservationIDs, ", ");
-			        echo $reservationIDs;
-			        echo "</td>";
- 			       echo "</tr>";
-			    }
-			    // End table
-			    echo "</table>";
-			    echo "<br>";
-			} else {
-			    echo "No user found with the provided name.";
-			}
-
-			// Close the database connections
-			$stmt->close();
-			$stmt1->close();
-			$conn->close();
-			?>
-				<a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
+		<div class="restricted-container bg-light">
+			<div class="row spacer">
+				<div class="col-12 px-5 text-center">
+					<h1 class="color-primary underline-secondary">Your Profile</h1>
+				</div>
+			</div>
+			<div class="row pt-3 width-80">
+				<div class="col-12">
+				<?php 
+				$host = "localhost"; // Database host
+				$dbname = "MoffatBay"; // Database name
+				$user = "LodgeAdmin"; // Database username
+				$pass = "password"; // Database password
+	
+				$conn = new mysqli($host, $user, $pass, $dbname);
+	
+				// Check connection
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				}
+	
+				// Get user's first name from Session
+				$cusID = $_SESSION['custID'];
+	
+				// Prepare and execute the SQL query to retrieve user information
+				$stmt = $conn->prepare("SELECT * FROM Customer WHERE customerID = ?");
+				$stmt->bind_param("i", $cusID);
+				$stmt->execute();
+				$result = $stmt->get_result();
+	
+				// Prepare and execute the SQL query to retrieve reservation numbers
+				$stmt1 = $conn->prepare("SELECT reservationID FROM Reservation WHERE customerID = ?");
+				$stmt1->bind_param("i", $cusID);
+				$stmt1->execute();
+				$result1 = $stmt1->get_result();
+	
+				// Check if any rows were returned
+				if ($result->num_rows > 0) {
+					// Start table with centering and spacing styles
+					echo "<table class='table table-striped' style='margin: auto; width: 90%;'>";
+					// Output the user's profile information
+					while ($row = $result->fetch_assoc()) {
+						echo "<tr>";
+						echo "<th scope='row'>" . "First Name" . "</th><td>" . $row['first_name'] . "</td>";
+						echo "</tr>";
+						echo "<tr>";
+						echo "<th scope='row'>" . "Last Name" . "</th><td>" . $row['last_name'] . "</td>";
+						echo "</tr>";
+						echo "<tr>";
+						echo "<th scope='row'>" . "Email" . "</th><td>" . $row['email'] . "</td>";
+						echo "</tr>";
+						echo "<tr>";
+						echo "<th scope='row'>" . "Phone" . "</th><td>" . $row['phone'] . "</td>";
+						echo "</tr>";
+						echo "<tr>";
+						echo "<th scope='row'>" . "Reservation IDs" . "</th><td>";
+						// Fetch and concatenate reservationIDs
+						$reservationIDs = "";
+						while ($row1 = $result1->fetch_assoc()) {
+							$reservationIDs .= $row1['reservationID'] . ", ";
+						}
+						// Remove trailing comma and space
+						$reservationIDs = rtrim($reservationIDs, ", ");
+						echo $reservationIDs;
+						echo "</td>";
+						echo "</tr>";
+					}
+					// End table
+					echo "</table>";
+					echo "<br>";
+				} else {
+					echo "No user found with the provided name.";
+				}
+	
+				// Close the database connections
+				$stmt->close();
+				$stmt1->close();
+				$conn->close();
+				?>
+					<a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -37,84 +37,86 @@ This file handles creating an account
 }
 </style>
 </head>
-<body>
-	<div
-		class="navbar d-flex justify-content-between bg-light sticky-top py-3">
-		<div class="container">
-			<div class="d-flex">
-				<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
-			</div>
-
-			<div class="main-menu">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="aboutus.php">About</a></li>
-					<li><a href="attractions.php">Attractions</a></li>
-					<li><a href="book.php">Reservations</a></li>
-                    <?php
-                    session_start(); // Start the session
-                                     // Check if the user is logged in
-                    if (isset($_SESSION['user_id'])) {
-                        // If logged in, display profile and logout links
-                        echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-                        echo '<li><a href="logout.php">Logout</a></li>';
-                    } else {
-                        // If not logged in, display the login link
-                        echo '<li><a href="login.php">Login</a></li>';
-                    }
-                    ?>
-                </ul>
-            </div>
-        </div>
-    </div>
-	<div class="restricted-container bg-light">
-		<div class="row spacer">
-			<div class="col-12 px-5 text-center">
-				<h1 class="color-primary underline-secondary">Registration</h1>
+<body class="sticky-footer">
+	<div class="main-content">
+		<div
+			class="navbar d-flex justify-content-between bg-light sticky-top py-3">
+			<div class="container">
+				<div class="d-flex">
+					<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
+				</div>
+	
+				<div class="main-menu">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="aboutus.php">About</a></li>
+						<li><a href="attractions.php">Attractions</a></li>
+						<li><a href="book.php">Reservations</a></li>
+						<?php
+						session_start(); // Start the session
+										 // Check if the user is logged in
+						if (isset($_SESSION['user_id'])) {
+							// If logged in, display profile and logout links
+							echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+							echo '<li><a href="logout.php">Logout</a></li>';
+						} else {
+							// If not logged in, display the login link
+							echo '<li><a href="login.php">Login</a></li>';
+						}
+						?>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class="row pt-3 width-80">
-			<div class="col-12">
-				<form id="registrationForm" action="register.php" method="post">
-					<div class="mb-3">
-						<label for="email" class="form-label">Email:</label> <input
-							type="email" id="email" name="email" class="form-control"
-							required>
-					</div>
-					<div class="mb-3">
-						<label for="firstname" class="form-label">First Name:</label> <input
-							type="text" id="firstname" name="firstname" class="form-control"
-							required>
-					</div>
-					<div class="mb-3">
-						<label for="lastname" class="form-label">Last Name:</label> <input
-							type="text" id="lastname" name="lastname" class="form-control"
-							required>
-					</div>
-					<div class="mb-3">
-						<label for="telephone" class="form-label">10-Digit Telephone Number:</label> <input
-							type="tel" id="telephone" name="telephone" class="form-control"
-							pattern="[0-9]{10}" required>
-					</div>
-					<div class="mb-3 position-relative">
-						<label for="password" class="form-label">Password:</label>
-						<div id="errorMessage"></div>
-						<input type="password" id="password" name="password"
-							class="form-control" required>
-						<div id="passwordRequirementsPopup"
-							class="password-requirements-popup">
-							<p>Passwords should be at least 8 characters in length and
-								include one uppercase and one lowercase letter.</p>
+		<div class="restricted-container bg-light">
+			<div class="row spacer">
+				<div class="col-12 px-5 text-center">
+					<h1 class="color-primary underline-secondary">Registration</h1>
+				</div>
+			</div>
+			<div class="row pt-3 width-80">
+				<div class="col-12">
+					<form id="registrationForm" action="register.php" method="post">
+						<div class="mb-3">
+							<label for="email" class="form-label">Email:</label> <input
+								type="email" id="email" name="email" class="form-control"
+								required>
 						</div>
-					</div>
-					<div class="mb-3">
-						<label for="confirm_password">Confirm Password:</label> <input
-							type="password" id="confirm_password" name="confirm_password"
-							class="form-control" required>
-					</div>
-					<button type="submit" class="btn btn-light">Register</button>
-					<a href="login.php" class="btn btn-light">Already Registered?</a>
-				</form>
+						<div class="mb-3">
+							<label for="firstname" class="form-label">First Name:</label> <input
+								type="text" id="firstname" name="firstname" class="form-control"
+								required>
+						</div>
+						<div class="mb-3">
+							<label for="lastname" class="form-label">Last Name:</label> <input
+								type="text" id="lastname" name="lastname" class="form-control"
+								required>
+						</div>
+						<div class="mb-3">
+							<label for="telephone" class="form-label">10-Digit Telephone Number:</label> <input
+								type="tel" id="telephone" name="telephone" class="form-control"
+								pattern="[0-9]{10}" required>
+						</div>
+						<div class="mb-3 position-relative">
+							<label for="password" class="form-label">Password:</label>
+							<div id="errorMessage"></div>
+							<input type="password" id="password" name="password"
+								class="form-control" required>
+							<div id="passwordRequirementsPopup"
+								class="password-requirements-popup">
+								<p>Passwords should be at least 8 characters in length and
+									include one uppercase and one lowercase letter.</p>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="confirm_password">Confirm Password:</label> <input
+								type="password" id="confirm_password" name="confirm_password"
+								class="form-control" required>
+						</div>
+						<button type="submit" class="btn btn-light">Register</button>
+						<a href="login.php" class="btn btn-light">Already Registered?</a>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -231,3 +231,13 @@ footer.text-light {
     font-size: 14px;
     color: #333;
 }
+
+.sticky-footer {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.sticky-footer .main-content {
+	flex: 1;
+}
