@@ -17,43 +17,45 @@
 <link rel="stylesheet" href="styles.css">
 <title>Reservation Confirmation - Moffat Bay Lodge</title>
 </head>
-<body>
-    <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
-        <div class="container">
-            <div class="d-flex">
-                <img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
+<body class="sticky-footer">
+    <div class="main-content">
+        <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
+            <div class="container">
+                <div class="d-flex">
+                    <img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
+                </div>
+                
+                <div class="main-menu">
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="aboutus.php">About</a></li>
+                        <li><a href="attractions.php">Attractions</a></li>
+                        <li><a href="book.php">Reservations</a></li>
+                        <?php
+                        session_start(); // Start the session
+                        //Check if the user is logged in
+                        if(isset($_SESSION['user_id'])) {
+                        // If logged in, display profile and logout links
+                        echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+                        echo '<li><a href="logout.php">Logout</a></li>';
+                        } else {
+                        // If not logged in, display the login link
+                        echo '<li><a href="login.php">Login</a></li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="main-menu">
-                <ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="aboutus.php">About</a></li>
-					<li><a href="attractions.php">Attractions</a></li>
-					<li><a href="book.php">Reservations</a></li>
-                    <?php
-                    session_start(); // Start the session
-                    //Check if the user is logged in
-                    if(isset($_SESSION['user_id'])) {
-                    // If logged in, display profile and logout links
-                    echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-                    echo '<li><a href="logout.php">Logout</a></li>';
-                    } else {
-                    // If not logged in, display the login link
-                    echo '<li><a href="login.php">Login</a></li>';
-                    }
-                    ?>
-                </ul>
+        </div>
+    
+        <div class="restricted-container bg-light">
+            <div class="row spacer">
+                <div class="col-12 px-5 text-center">
+                    <h1 class="color-primary">Thank you for reserving a room at Moffat Bay Lodge! We hope you enjoy your stay!</h1>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="restricted-container bg-light">
-		<div class="row spacer">
-			<div class="col-12 px-5 text-center">
-				<h1 class="color-primary">Thank you for reserving a room at Moffat Bay Lodge! We hope you enjoy your stay!</h1>
-			</div>
-		</div>
-	</div>
 
     <footer class="text-light pt-4 pb-2">
         <div class="row width-80">

@@ -16,7 +16,7 @@ This code allows a user to lookup an existing reservation
 <link rel="stylesheet" href="styles.css">
 <title>Reservation Lookup - Moffat Bay Lodge</title>
 </head>
-<body>
+<body class="sticky-footer">
 <?php
     session_start(); // Start the session
     // Check if the user is not logged in
@@ -26,99 +26,101 @@ This code allows a user to lookup an existing reservation
         exit; // Stop further execution of the script
     }
 ?>
-	<div
-		class="navbar d-flex justify-content-between bg-light sticky-top py-3">
-		<div class="container">
-			<div class="d-flex">
-				<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
-			</div>
-
-			<div class="main-menu">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="aboutus.php">About</a></li>
-					<li><a href="attractions.php">Attractions</a></li>
-					<li><a href="book.php">Reservations</a></li>
-                    <?php
-                    if (isset($_SESSION['user_id'])) {
-                        // If logged in, display profile and logout links
-                        echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-                        echo '<li><a href="logout.php">Logout</a></li>';
-                    } else {
-                        // If not logged in, display the login link
-                        echo '<li><a href="login.php">Login</a></li>';
-                    }
-                    ?>
-                </ul>
-			</div>
-		</div>
-	</div>
-	<div class="restricted-container bg-light">
-		<div class="row spacer">
-			<div class="col-12 px-5 text-center">
-				<h1 class="color-primary underline-secondary">Reservation Lookup</h1>
+	<div class="main-content">
+		<div
+			class="navbar d-flex justify-content-between bg-light sticky-top py-3">
+			<div class="container">
+				<div class="d-flex">
+					<img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
+				</div>
+	
+				<div class="main-menu">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="aboutus.php">About</a></li>
+						<li><a href="attractions.php">Attractions</a></li>
+						<li><a href="book.php">Reservations</a></li>
+						<?php
+						if (isset($_SESSION['user_id'])) {
+							// If logged in, display profile and logout links
+							echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+							echo '<li><a href="logout.php">Logout</a></li>';
+						} else {
+							// If not logged in, display the login link
+							echo '<li><a href="login.php">Login</a></li>';
+						}
+						?>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class="row pt-3 width-80">
-			<div class="col-12">
-				<h4>Please input either a Reservation ID or an Email!</h4><br>
-				<form action="lookup_reservation.php" method="post">
-					<div class="mb-3">
-						<label for="resNum" class="form-label">Reservation ID:</label>
-						<input type="text" id="resNum" name="resNum"
-							class="form-control">
-					</div>
-					<div class="mb-3">
-						<label for="email" class="form-label">Email:</label> <input
-							type="email" id="email" name="email" class="form-control">
-					</div>
-					<button type="submit" class="btn btn-light">Search</button>
-				</form>
-			<?php
-            if (isset($_SESSION['error_message'])) {
-                echo "<div class='alert alert-danger mt-3'>" . $_SESSION['error_message'] . "</div>";
-                unset($_SESSION['error_message']);
-            }
-            if (isset($_SESSION['reservations'])) {
-                $reservations = $_SESSION['reservations'];
-                ?>
-                <h2 class='color-primary mt-4'>Reservation Details:</h2>
-                <?php foreach ($reservations as $reservation) {?>
-                <table class="table table-striped">
-                    <tbody>
-                    	<tr>
-                            <th scope="row">Room Size</th>
-                            <td><?php echo $reservation['room_type']; ?></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Number of Guests</th>
-                            <td><?php echo $reservation['number_of_guests']; ?></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Check-in Date</th>
-                            <td><?php echo $reservation['check_in_date']; ?></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Check-out Date</th>
-                            <td><?php echo $reservation['check_out_date']; ?></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Cost per Night</th>
-                            <td><?php echo $reservation['cost_per_night']; ?></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Total Cost</th>
-                            <td><?php echo $reservation['total_cost']; ?></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <?php } ?>
-                <?php
-                $_SESSION['reservations'] = NULL;
-                $reservation = NULL;
-            }
-            ?>
-            </div>
+		<div class="restricted-container bg-light">
+			<div class="row spacer">
+				<div class="col-12 px-5 text-center">
+					<h1 class="color-primary underline-secondary">Reservation Lookup</h1>
+				</div>
+			</div>
+			<div class="row pt-3 width-80">
+				<div class="col-12">
+					<h4>Please input either a Reservation ID or an Email!</h4><br>
+					<form action="lookup_reservation.php" method="post">
+						<div class="mb-3">
+							<label for="resNum" class="form-label">Reservation ID:</label>
+							<input type="text" id="resNum" name="resNum"
+								class="form-control">
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label">Email:</label> <input
+								type="email" id="email" name="email" class="form-control">
+						</div>
+						<button type="submit" class="btn btn-light">Search</button>
+					</form>
+				<?php
+				if (isset($_SESSION['error_message'])) {
+					echo "<div class='alert alert-danger mt-3'>" . $_SESSION['error_message'] . "</div>";
+					unset($_SESSION['error_message']);
+				}
+				if (isset($_SESSION['reservations'])) {
+					$reservations = $_SESSION['reservations'];
+					?>
+					<h2 class='color-primary mt-4'>Reservation Details:</h2>
+					<?php foreach ($reservations as $reservation) {?>
+					<table class="table table-striped">
+						<tbody>
+							<tr>
+								<th scope="row">Room Size</th>
+								<td><?php echo $reservation['room_type']; ?></td>
+							</tr>
+							<tr>
+								<th scope="row">Number of Guests</th>
+								<td><?php echo $reservation['number_of_guests']; ?></td>
+							</tr>
+							<tr>
+								<th scope="row">Check-in Date</th>
+								<td><?php echo $reservation['check_in_date']; ?></td>
+							</tr>
+							<tr>
+								<th scope="row">Check-out Date</th>
+								<td><?php echo $reservation['check_out_date']; ?></td>
+							</tr>
+							<tr>
+								<th scope="row">Cost per Night</th>
+								<td><?php echo $reservation['cost_per_night']; ?></td>
+							</tr>
+							<tr>
+								<th scope="row">Total Cost</th>
+								<td><?php echo $reservation['total_cost']; ?></td>
+							</tr>
+						</tbody>
+					</table>
+					<?php } ?>
+					<?php
+					$_SESSION['reservations'] = NULL;
+					$reservation = NULL;
+				}
+				?>
+				</div>
+			</div>
 		</div>
 	</div>
 
