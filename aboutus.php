@@ -14,7 +14,7 @@ This page displays information about Moffat Lodge and how to contact
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="styles.css">
-<title>About Us - moffat Bay Lodge</title>
+<title>About Us - Moffat Bay Lodge</title>
 </head>
 <body>
 	<div
