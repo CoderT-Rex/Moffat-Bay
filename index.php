@@ -170,7 +170,7 @@ This code displays the landing page for the user
 						mountains. Its discreet elegance and peaceful setting provide a
 						sanctuary where the rhythm of the waves complements the gourmet
 						delights, inviting diners into a world where every meal is a
-						journey through the richness of nature's offerings..</p>
+						journey through the richness of nature's offerings.</p>
 				</div>
 				<div class="col-md">
 					<div class="accomodations-img-wrapper">
@@ -194,7 +194,7 @@ This code displays the landing page for the user
 						forests and gentle slopes, marries the thrill of exploration with
 						the peace of the great outdoors. As hikers navigate the winding
 						paths, they are enveloped in the beauty of nature, creating a
-						perfect harmony between adventure and serenity..</p>
+						perfect harmony between adventure and serenity.</p>
 				</div>
 				<div class="col-md order-1">
 					<div class="accomodations-img-wrapper">
@@ -233,11 +233,7 @@ This code displays the landing page for the user
 									
 									<div class="carousel-caption d-none d-md-block">
 										<h5 class="text-shadow-lg">Queen Beds</h5>
-										<p class="text-shadow-lg">Our queen beds, framed with rich,
-											natural wood and topped with luxurious, plush bedding, offer
-											the perfect blend of comfort and style. Each bed is a
-											sanctuary of relaxation, inviting guests to unwind in the
-											embrace of serene elegance and superior craftsmanship.</p>
+										<p class="text-shadow-lg">Our Queen bed rooms come equipped satelite TV, microwave, mini fridge, free Starlink internet, complimentary warm towels, and toiletries.</p>
 									</div>
 								</div>
 								<div class="carousel-item">
@@ -248,11 +244,7 @@ This code displays the landing page for the user
                                       -->
 									<div class="carousel-caption d-none d-md-block">
 										<h5 class="text-shadow-lg">King Beds</h5>
-										<p class="text-shadow-lg">Experience the ultimate in comfort
-											and luxury with our spacious king beds, designed to provide a
-											restful and rejuvenating sleep. Nestled in the serene
-											ambiance of our mountain lodge, these beds offer the perfect
-											retreat after a day of adventure.</p>
+										<p class="text-shadow-lg">Experience the ultimate in comfort and luxury with our spacious king sized suites. Each suite comes equipped with a full kitchen, satelite TV, free Starlink internet, complimentary warm towels, and toiletries.</p>
 									</div>
 								</div>
 								<div class="carousel-item">
@@ -261,12 +253,7 @@ This code displays the landing page for the user
 									   https://unsplash.com/photos/a-bed-in-a-bedroom-next-to-a-window-WZ_stj4GWoU -->
 									<div class="carousel-caption d-none d-md-block">
 										<h5 class="text-shadow-lg">Twin Beds</h5>
-										<p class="text-shadow-lg">Our cozy twin beds are perfect for
-											guests who prefer individual sleeping arrangements or for
-											families traveling with children. Tucked away in our rustic
-											cabins, these beds provide a warm and inviting space to rest
-											and recharge.</p>
-									</div>
+										<p class="text-shadow-lg">Our cozy twin bed lofts offer all the necessities while you explore the outdoors. Each room has a microwave, free Starlink internet, towels, and toiletries.</p>
 								</div>
 							</div>
 							<button class="carousel-control-prev" type="button"
