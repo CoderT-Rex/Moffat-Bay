@@ -52,9 +52,13 @@
 						session_start(); // Start the session
 						// Check if the user is logged in
 						if (isset($_SESSION['user_id'])) {
-							// If logged in, display profile and logout links
-							echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-							echo '<li><a href="logout.php">Logout</a></li>';
+							echo '<li class="nav-item dropdown">';
+							echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">' . $_SESSION['user_id'] . '</a>';
+							echo '<ul class="dropdown-menu" aria-labelledby="navbarDropdown">';
+							echo '<li><a class="dropdown-item" href="profile.php">Profile</a></li>';
+							echo '<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
+							echo '</ul>';
+							echo '</li>';
 						} else {
 							// If not logged in, display the login link
 							echo '<li><a href="login.php">Login</a></li>';
