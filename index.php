@@ -229,10 +229,12 @@ This code displays the landing page for the user
 									Date: 2024-04-01-->
 
 									<div class="carousel-caption d-none d-md-block">
-										<h5 class="text-shadow-lg">Queen Beds</h5>
-										<p class="text-shadow-lg">Our Queen bed rooms come equipped satelite TV,
-											microwave, mini fridge, free Starlink internet, complimentary warm towels,
-											and toiletries.</p>
+										<div class="caption-background">
+    										<h5 class="text-shadow-lg">Queen Beds</h5>
+    										<p class="text-shadow-lg">Our Queen bed rooms come equipped satelite TV,
+    											microwave, mini fridge, free Starlink internet, complimentary warm towels,
+    											and toiletries.</p>
+    									</div>
 									</div>
 								</div>
 								<div class="carousel-item">
@@ -242,11 +244,13 @@ This code displays the landing page for the user
 									 Date/Time: 4/12/2024 at 1500 EST
 									  -->
 									<div class="carousel-caption d-none d-md-block">
-										<h5 class="text-shadow-lg">King Beds</h5>
-										<p class="text-shadow-lg">Experience the ultimate in comfort and luxury with our
-											spacious king sized suites. Each suite comes equipped with a full kitchen,
-											satelite TV, free Starlink internet, complimentary warm towels, and
-											toiletries.</p>
+										<div class="caption-background">
+											<h5 class="text-shadow-lg">King Beds</h5>
+    										<p class="text-shadow-lg">Experience the ultimate in comfort and luxury with our
+    											spacious king sized suites. Each suite comes equipped with a full kitchen,
+    											satelite TV, free Starlink internet, complimentary warm towels, and
+    											toiletries.</p>
+    									</div>
 									</div>
 								</div>
 								<div class="carousel-item">
@@ -254,10 +258,12 @@ This code displays the landing page for the user
 									<!--Staton, D. (2022, January 29). a bed in a bedroom next to a window. Unsplash. 
 									   https://unsplash.com/photos/a-bed-in-a-bedroom-next-to-a-window-WZ_stj4GWoU -->
 									<div class="carousel-caption d-none d-md-block">
-										<h5 class="text-shadow-lg">Twin Beds</h5>
-										<p class="text-shadow-lg">Our cozy twin bed lofts offer all the necessities
-											while you explore the outdoors. Each room has a microwave, free Starlink
-											internet, towels, and toiletries.</p>
+										<div class="caption-background">
+    										<h5 class="text-shadow-lg">Twin Beds</h5>
+    										<p class="text-shadow-lg">Our cozy twin bed lofts offer all the necessities
+    											while you explore the outdoors. Each room has a microwave, free Starlink
+    											internet, towels, and toiletries.</p>
+    									</div>
 									</div>
 								</div>
 								<button class="carousel-control-prev" type="button"

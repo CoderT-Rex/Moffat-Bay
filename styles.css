@@ -294,3 +294,10 @@ footer.text-light {
 .dropdown-toggle::after {
     display: none;
 }
+
+.caption-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
