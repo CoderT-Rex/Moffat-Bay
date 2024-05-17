@@ -61,6 +61,12 @@
                 <div class="col-12 px-5 text-center">
                     <h1 class="color-primary">Thank you for reserving a room at Moffat Bay Lodge! We hope you enjoy your
                         stay!</h1>
+                            <?php // After successfully inserting the reservation into the database, clear any saved form data
+                                unset($_SESSION['room_size']);
+                                unset($_SESSION['guests']);
+                                unset($_SESSION['checkin']);
+                                unset($_SESSION['checkout']); 
+                            ?>
                 </div>
             </div>
         </div>
