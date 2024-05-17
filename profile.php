@@ -37,7 +37,7 @@ This code handles displaying user information when they are logged in-->
 						session_start(); // Start the session
 						// Check if the user is logged in
 						if (isset($_SESSION['user_id'])) {
-							// If logged in, display profile and logout links
+							// If logged in, display profile link
 							echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
 						} else {
 							// If not logged in, display the login link
