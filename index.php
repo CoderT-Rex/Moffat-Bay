@@ -5,47 +5,46 @@ Professor Sue Sampson
 This code displays the landing page for the user
 -->
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css">
-<title>Moffat Bay Lodge</title>
-</head>
-<body>
-	<div
-		class="navbar d-flex justify-content-between bg-light sticky-top py-3">
-		<div class="container">
-			<div class="d-flex">
-				<img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
-				<!-- 
-                        Maynard J. (2012). salish salmon
-                    -->
-			</div>
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles.css">
+	<title>Moffat Bay Lodge</title>
+</head>
+
+<body>
+	<div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
+		<div class="container">
+			<a href="index.php">
+				<div class="d-flex">
+					<img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
+					<!-- 
+						Maynard J. (2012). salish salmon
+					-->
+				</div>
+			</a>
 			<div class="main-menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="aboutus.php">About</a></li>
 					<li><a href="attractions.php">Attractions</a></li>
 					<li><a href="book.php">Reservations</a></li>
-                    <?php
-                    session_start(); // Start the session
-                                     // Check if the user is logged in
-                    if (isset($_SESSION['user_id'])) {
-                        // If logged in, display profile and logout links
-                        echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-                        echo '<li><a href="logout.php">Logout</a></li>';
-                    } else {
-                        // If not logged in, display the login link
-                        echo '<li><a href="login.php">Login</a></li>';
-                    }
-                    ?>
-                </ul>
+					<?php
+					session_start(); // Start the session
+					// Check if the user is logged in
+					if (isset($_SESSION['user_id'])) {
+						// If logged in, display profile and logout links
+						echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+						echo '<li><a href="logout.php">Logout</a></li>';
+					} else {
+						// If not logged in, display the login link
+						echo '<li><a href="login.php">Login</a></li>';
+					}
+					?>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -86,8 +85,7 @@ This code displays the landing page for the user
 				</div>
 
 				<div class="col-md px-5">
-					<img class="img-fluid border-radius" src="images/san-juan.jpg"
-						alt="Cabin by the Lake">
+					<img class="img-fluid border-radius" src="images/san-juan.jpg" alt="Cabin by the Lake">
 					<!-- Massello, B. (2021, June 13). a light house sitting on top of a cliff next to the ocean. Unsplash. 
 					   https://unsplash.com/photos/a-light-house-sitting-on-top-of-a-cliff-next-to-the-ocean-EVEtQ2H5Vk8 -->
 				</div>
@@ -109,8 +107,7 @@ This code displays the landing page for the user
 				</div>
 			</div>
 			<div class="row pt-3 width-80">
-				<div
-					class="col-md d-flex flex-column justify-content-center border-right-secondary">
+				<div class="col-md d-flex flex-column justify-content-center border-right-secondary">
 					<h3 class="color-primary">Rustic, Elegant Cabins</h3>
 					<p class="fs-24">Inside the Rustic Elegance Cabins, a world of
 						warm, inviting comfort awaits. Each cabin is a masterpiece of
@@ -130,17 +127,16 @@ This code displays the landing page for the user
 					<div class="accomodations-img-wrapper">
 						<img src="images/lodge.png" alt="mountain-lodge">
 						<!-- 
-                            Image by: ChatGPT
-                            Source: ChatGPT
-                            Prompt: Create a serene image of a mountain lodge, nestled in the woods. The lodge should be surrounded by tall trees and have a cozy, inviting feel. The image should evoke a sense of peace and tranquility.
-                            Date: 2024-04-01
-                         -->
+							Image by: ChatGPT
+							Source: ChatGPT
+							Prompt: Create a serene image of a mountain lodge, nestled in the woods. The lodge should be surrounded by tall trees and have a cozy, inviting feel. The image should evoke a sense of peace and tranquility.
+							Date: 2024-04-01
+						 -->
 					</div>
 				</div>
 			</div>
 			<div class="row pt-3 width-80">
-				<div
-					class="col-md d-flex flex-column justify-content-center order-2">
+				<div class="col-md d-flex flex-column justify-content-center order-2">
 					<h3 class="color-primary">Mountain View Lodges</h3>
 					<p class="fs-24">Nestled amidst the serene beauty of mountain
 						landscapes, the Moffat Bat Lodge offers a unique retreat for
@@ -152,15 +148,14 @@ This code displays the landing page for the user
 					<div class="accomodations-img-wrapper">
 						<img src="images/mountaincabin.jpg" alt="mountain view lodge">
 						<!-- 
-                            Dean, A. (2023, February 21). Download the Beautiful Log Cabin Exterior 16431702 royalty-free Stock Photo 
-                                from Vecteezy for your project an. . . Vecteezy. https://www.vecteezy.com/photo/16431702-beautiful-log-cabin-exterior
-                         -->
+							Dean, A. (2023, February 21). Download the Beautiful Log Cabin Exterior 16431702 royalty-free Stock Photo 
+								from Vecteezy for your project an. . . Vecteezy. https://www.vecteezy.com/photo/16431702-beautiful-log-cabin-exterior
+						 -->
 					</div>
 				</div>
 			</div>
 			<div class="row pt-3 width-80">
-				<div
-					class="col-md d-flex flex-column justify-content-center border-right-secondary">
+				<div class="col-md d-flex flex-column justify-content-center border-right-secondary">
 					<h3 class="color-primary">Lakeside Retreats</h3>
 					<p class="fs-24">Perched at the water's edge with a majestic
 						mountain backdrop, the Bayview Seafood Restaurant presents an
@@ -176,17 +171,16 @@ This code displays the landing page for the user
 					<div class="accomodations-img-wrapper">
 						<img src="images/restaurant.png" alt="restaurant">
 						<!-- 
-                            Image by: ChatGPT
-                            Source: ChatGPT
-                            Prompt: Create an image of a lakeside retreat, with a restaurant overlooking a serene lake. The restaurant should have a cozy, inviting feel and evoke a sense of peace and tranquility.
-                            Date: 2024-04-01
-                         -->
+							Image by: ChatGPT
+							Source: ChatGPT
+							Prompt: Create an image of a lakeside retreat, with a restaurant overlooking a serene lake. The restaurant should have a cozy, inviting feel and evoke a sense of peace and tranquility.
+							Date: 2024-04-01
+						 -->
 					</div>
 				</div>
 			</div>
 			<div class="row pt-3 width-80">
-				<div
-					class="col-md d-flex flex-column justify-content-center order-2">
+				<div class="col-md d-flex flex-column justify-content-center order-2">
 					<h3 class="color-primary">Hiking Trails</h3>
 					<p class="fs-24">Immersed in the vibrant hues of mountain greenery,
 						the Trailblazer's Path provides an idyllic setting for hikers and
@@ -200,9 +194,9 @@ This code displays the landing page for the user
 					<div class="accomodations-img-wrapper">
 						<img src="images/hiking.jpg" alt="mountain hike">
 						<!-- 
-                          Førestbird, J. &. J. (2018, August 2). person hiking above mountain overlooking river. Unsplash. 
-                            https://unsplash.com/photos/person-hiking-above-mountain-overlooking-river-znoL1m6MD_k
-                         -->
+						  Førestbird, J. &. J. (2018, August 2). person hiking above mountain overlooking river. Unsplash. 
+							https://unsplash.com/photos/person-hiking-above-mountain-overlooking-river-znoL1m6MD_k
+						 -->
 					</div>
 				</div>
 			</div>
@@ -215,13 +209,12 @@ This code displays the landing page for the user
 					<div class="cold-md px-5 pb-5">
 						<div id="carouselExampleCaptions" class="carousel slide">
 							<div class="carousel-indicators">
-								<button type="button" data-bs-target="#carouselExampleCaptions"
-									data-bs-slide-to="0" class="active" aria-current="true"
-									aria-label="Slide 1"></button>
-								<button type="button" data-bs-target="#carouselExampleCaptions"
-									data-bs-slide-to="1" aria-label="Slide 2"></button>
-								<button type="button" data-bs-target="#carouselExampleCaptions"
-									data-bs-slide-to="2" aria-label="Slide 3"></button>
+								<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+									class="active" aria-current="true" aria-label="Slide 1"></button>
+								<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+									aria-label="Slide 2"></button>
+								<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+									aria-label="Slide 3"></button>
 							</div>
 							<div class="carousel-inner">
 								<div class="carousel-item active">
@@ -230,21 +223,26 @@ This code displays the landing page for the user
 									Source: ChatGPT 
 									Prompt: Create an image of a queen bed, framed with rich, natural wood and topped with luxurious, plush bedding. The bed should be set against a serene, elegant backdrop and evoke a sense of comfort and relaxation. 
 									Date: 2024-04-01-->
-									
+
 									<div class="carousel-caption d-none d-md-block">
 										<h5 class="text-shadow-lg">Queen Beds</h5>
-										<p class="text-shadow-lg">Our Queen bed rooms come equipped satelite TV, microwave, mini fridge, free Starlink internet, complimentary warm towels, and toiletries.</p>
+										<p class="text-shadow-lg">Our Queen bed rooms come equipped satelite TV,
+											microwave, mini fridge, free Starlink internet, complimentary warm towels,
+											and toiletries.</p>
 									</div>
 								</div>
 								<div class="carousel-item">
 									<img src="images/kingbed.png" class="d-block w-100" alt="...">
 									<!-- Image by: Openart.ai
-                                     Prompt: king bed in a luxury cabin 
-                                     Date/Time: 4/12/2024 at 1500 EST
-                                      -->
+									 Prompt: king bed in a luxury cabin 
+									 Date/Time: 4/12/2024 at 1500 EST
+									  -->
 									<div class="carousel-caption d-none d-md-block">
 										<h5 class="text-shadow-lg">King Beds</h5>
-										<p class="text-shadow-lg">Experience the ultimate in comfort and luxury with our spacious king sized suites. Each suite comes equipped with a full kitchen, satelite TV, free Starlink internet, complimentary warm towels, and toiletries.</p>
+										<p class="text-shadow-lg">Experience the ultimate in comfort and luxury with our
+											spacious king sized suites. Each suite comes equipped with a full kitchen,
+											satelite TV, free Starlink internet, complimentary warm towels, and
+											toiletries.</p>
 									</div>
 								</div>
 								<div class="carousel-item">
@@ -253,38 +251,39 @@ This code displays the landing page for the user
 									   https://unsplash.com/photos/a-bed-in-a-bedroom-next-to-a-window-WZ_stj4GWoU -->
 									<div class="carousel-caption d-none d-md-block">
 										<h5 class="text-shadow-lg">Twin Beds</h5>
-										<p class="text-shadow-lg">Our cozy twin bed lofts offer all the necessities while you explore the outdoors. Each room has a microwave, free Starlink internet, towels, and toiletries.</p>
+										<p class="text-shadow-lg">Our cozy twin bed lofts offer all the necessities
+											while you explore the outdoors. Each room has a microwave, free Starlink
+											internet, towels, and toiletries.</p>
+									</div>
 								</div>
+								<button class="carousel-control-prev" type="button"
+									data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Previous</span>
+								</button>
+								<button class="carousel-control-next" type="button"
+									data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Next</span>
+								</button>
 							</div>
-							<button class="carousel-control-prev" type="button"
-								data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Previous</span>
-							</button>
-							<button class="carousel-control-next" type="button"
-								data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Next</span>
-							</button>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 
 		<footer class="text-light pb-2">
 			<div class="row width-80">
 				<!-- Footer logo and description -->
 				<div class="col-md-4 mb-3 ps-5">
-					<img src="images/logo.png" alt="Moffat Bay Lodge"
-						class="footer-logo mb-2">
+					<img src="images/logo.png" alt="Moffat Bay Lodge" class="footer-logo mb-2">
 					<!-- 
-                        Image by: ChatGPT
-                        Source: ChatGPT
-                        Prompt: Create a logo for a lodge named "moffat Bay Lodge." The logo should feature a serene, nature-inspired design with a color palette that evokes tranquility and elegance.
-                        Date: 2024-04-01
-                    -->
+						Image by: ChatGPT
+						Source: ChatGPT
+						Prompt: Create a logo for a lodge named "moffat Bay Lodge." The logo should feature a serene, nature-inspired design with a color palette that evokes tranquility and elegance.
+						Date: 2024-04-01
+					-->
 					<small class="d-block mb-3">&copy; 2024 Moffat Bay Lodge. All
 						rights reserved.</small>
 				</div>
@@ -319,10 +318,10 @@ This code displays the landing page for the user
 		</footer>
 	</main>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
 
 </body>
+
 </html>
