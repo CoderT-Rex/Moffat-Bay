@@ -44,7 +44,7 @@ body {
 }
 
 .btn-logout {
-	background-color: #ffa07a !important;
+	background-color: #ff1f1f !important;
 	color: whitesmoke !important;
     float: right;
 }
@@ -294,4 +294,12 @@ footer.text-light {
     padding: 10px;
     border-radius: 5px;
     display: inline-block;
+}
+
+.reservation-item {
+    margin-bottom: 40px;
+}
+
+.reservation-item h4 {
+    margin-bottom: 10px;
 }
