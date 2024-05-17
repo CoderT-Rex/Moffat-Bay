@@ -133,7 +133,7 @@ This code handles displaying user information when they are logged in-->
 					$conn->close();
 					?>
 					<a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
-					<a href="logout.php" class="btn btn-logout">Logout</a>
+					<a href="logout.php" class="btn btn-light btn-logout">Logout</a>
 				</div>
 			</div>
 		</div>
