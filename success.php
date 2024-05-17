@@ -15,45 +15,47 @@ This file handles confirms a sucessful account reservation
 	<title>Login - Moffat Bay Lodge</title>
 </head>
 
-<body>
-	<div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
-		<div class="container">
-			<a href="index.php">
-				<div class="d-flex">
-					<img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
-					<!-- 
+<body class="sticky-footer">
+	<div class="main-content">
+		<div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
+			<div class="container">
+				<a href="index.php">
+					<div class="d-flex">
+						<img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
+						<!-- 
 						Maynard J. (2012). salish salmon
 					-->
-				</div>
-			</a>
+					</div>
+				</a>
 
-			<div class="main-menu">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="aboutus.php">About</a></li>
-					<li><a href="attractions.php">Attractions</a></li>
-					<li><a href="book.php">Reservations</a></li>
-					<?php
-					session_start(); // Start the session
-					// Check if the user is logged in
-					if (isset($_SESSION['user_id'])) {
-						// If logged in, display profile and logout links
-						echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-						echo '<li><a href="logout.php">Logout</a></li>';
-					} else {
-						// If not logged in, display the login link
-						echo '<li><a href="login.php">Login</a></li>';
-					}
-					?>
-				</ul>
+				<div class="main-menu">
+					<ul>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="aboutus.php">About</a></li>
+						<li><a href="attractions.php">Attractions</a></li>
+						<li><a href="book.php">Reservations</a></li>
+						<?php
+						session_start(); // Start the session
+						// Check if the user is logged in
+						if (isset($_SESSION['user_id'])) {
+							// If logged in, display profile and logout links
+							echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
+							echo '<li><a href="logout.php">Logout</a></li>';
+						} else {
+							// If not logged in, display the login link
+							echo '<li><a href="login.php">Login</a></li>';
+						}
+						?>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="restricted-container bg-light">
-		<div class="row spacer">
-			<div class="col-12 px-5 text-center">
-				<h1 class="color-primary">Your account has been successfully
-					created! Enjoy all of what Moffat Bay has to offer!</h1>
+		<div class="restricted-container bg-light">
+			<div class="row spacer">
+				<div class="col-12 px-5 text-center">
+					<h1 class="color-primary">Your account has been successfully
+						created! Enjoy all of what Moffat Bay has to offer!</h1>
+				</div>
 			</div>
 		</div>
 	</div>
