@@ -18,9 +18,14 @@ This page shows the available attractions
 <body>
     <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
         <div class="container">
-            <div class="d-flex">
-                <img class="main-logo" src="images/logo.png" alt="moffat Bay Lodge">
-            </div>
+            <a href="index.php">
+                <div class="d-flex">
+                    <img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
+                    <!-- 
+                        Maynard J. (2012). salish salmon
+                    -->
+                </div>
+            </a>
 
             <div class="main-menu">
                 <ul>
@@ -58,7 +63,8 @@ This page shows the available attractions
                     our Island's history in the Pig War of 1859, a border dispute between America and Great Britain. See
                     herds of Alpacas and spot Black Tailed deer, or disconnect in the fragrance of one of our many
                     lavender fields. Whether you want to ascend a small mountain or find an off the beaten path grove to
-                    meditate, you will find your needs fulfilled on Jovesida Island. Tours are seasonal call or email for availability.
+                    meditate, you will find your needs fulfilled on Jovesida Island. Tours are seasonal call or email
+                    for availability.
                 </p>
             </div>
             <div class="col-md">
@@ -79,7 +85,8 @@ This page shows the available attractions
                     Joviedsa Island. Enjoy the tranquility and beauty of the bay, and the wonder of the many creatures
                     that surround you. You may spot Orcas, Harbor Seals, Bald Eagles, or River Otters while out on your
                     journey! Paddle into one of the neighboring Islands for a drink and bite to eat at one of the many
-                    Island bars. Feel the relaxing rhythm of the water and wind in the air rock you into tranquility. Call or email us to check
+                    Island bars. Feel the relaxing rhythm of the water and wind in the air rock you into tranquility.
+                    Call or email us to check
                     rental availability and pricing.
                 </p>
             </div>
@@ -100,7 +107,8 @@ This page shows the available attractions
                     tours and create unforgettable memories. Our humpback whales migrate from Hawaii to enjoy our
                     nutrient rich waters. There is nothing like seeing one of these 50 foot majestic creatures emerge
                     proudly from the waves. Orcas have also been known to inhabit our waters. Our Sunset cruise features
-                    delicious cocktails and a tropical dinner menu. These reservations fill up fast, we recommend calling or emailing at
+                    delicious cocktails and a tropical dinner menu. These reservations fill up fast, we recommend
+                    calling or emailing at
                     least 3 months in advance.
                 </p>
             </div>
@@ -123,7 +131,8 @@ This page shows the available attractions
                     out in the ocean below, sometimes growing to be up to 7 feet long. Gaze at beautiful, flower-like
                     Metridium Anemones and playful seals. Experience Octopuses and King Crabs up close. Whether this is
                     your hundredth dive or your first, our guides and instructors will have something to offer you and
-                    give you the best possible experience. Liscence required for solo divers. Please call or email for guide availability. 
+                    give you the best possible experience. Liscence required for solo divers. Please call or email for
+                    guide availability.
                 </p>
             </div>
             <div class="col-md order-1">

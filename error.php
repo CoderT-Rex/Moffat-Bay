@@ -5,26 +5,29 @@ Professor Sue Sampson
 This code handles error messages
 -->
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css">
-<title>Login - Moffat Bay Lodge</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles.css">
+	<title>Login - Moffat Bay Lodge</title>
 </head>
+
 <body class="sticky-footer">
 	<div class="main-content">
-		<div
-			class="navbar d-flex justify-content-between bg-light sticky-top py-3">
+		<div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
 			<div class="container">
-				<div class="d-flex">
-					<img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
-				</div>
-	
+				<a href="index.php">
+					<div class="d-flex">
+						<img class="main-logo" src="images/logo.png" alt="Moffat Bay Lodge">
+						<!-- 
+						Maynard J. (2012). salish salmon
+					-->
+					</div>
+				</a>
+
 				<div class="main-menu">
 					<ul>
 						<li><a href="index.php">Home</a></li>
@@ -33,7 +36,7 @@ This code handles error messages
 						<li><a href="book.php">Reservations</a></li>
 						<?php
 						session_start(); // Start the session
-										 // Check if the user is logged in
+						// Check if the user is logged in
 						if (isset($_SESSION['user_id'])) {
 							// If logged in, display profile and logout links
 							echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
@@ -53,9 +56,9 @@ This code handles error messages
 					<h1 class="color-primary">
 						<?php if (!empty($_SESSION['errors'])): ?>
 							<div class="error-messages">
-							<?php foreach ($_SESSION['errors'] as $error): ?>
-							<p><?php echo htmlspecialchars($error); ?></p>
-							<?php endforeach; ?>
+								<?php foreach ($_SESSION['errors'] as $error): ?>
+									<p><?php echo htmlspecialchars($error); ?></p>
+								<?php endforeach; ?>
 							</div>
 							<?php unset($_SESSION['errors']); // Clear errors after displaying ?>
 						<?php endif; ?>
@@ -69,8 +72,8 @@ This code handles error messages
 		<div class="row width-80">
 			<!-- Footer logo and description -->
 			<div class="col-md-4 mb-3 ps-5">
-				<img src="images/logo.png" alt="Moffat Bay Lodge"
-					class="footer-logo mb-2"> <small class="d-block mb-3">&copy; 2024
+				<img src="images/logo.png" alt="Moffat Bay Lodge" class="footer-logo mb-2"> <small
+					class="d-block mb-3">&copy; 2024
 					Moffat Bay Lodge. All rights reserved.</small>
 			</div>
 
@@ -103,9 +106,9 @@ This code handles error messages
 		</div>
 	</footer>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
 </body>
+
 </html>
