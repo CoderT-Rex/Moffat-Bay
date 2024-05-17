@@ -25,6 +25,9 @@
         header("Location: login.php");
         exit; // Stop further execution of the script
     }
+
+    // Check if the form has been submitted with data
+    $formSubmitted = isset($_SESSION['room_size']) && isset($_SESSION['guests']) && isset($_SESSION['checkin']) && isset($_SESSION['checkout']);
     ?>
     <div class="main-content">
         <div class="navbar d-flex justify-content-between bg-light sticky-top py-3">
@@ -75,25 +78,23 @@
                         <div class="mb-3">
                             <label for="room_size" class="form-label">Room Size:</label>
                             <select id="room_size" name="room_size" class="form-select" required>
-                                <option value="double full beds">Double Full Beds</option>
-                                <option value="queen bed">Queen</option>
-                                <option value="double queen beds">Double Queen Beds</option>
-                                <option value="king bed">King</option>
+                                <option value="double full beds" <?php if (isset($_SESSION['room_size']) && $_SESSION['room_size'] == 'double full beds') echo 'selected'; ?>>Double Full Beds</option>
+                                <option value="queen bed" <?php if (isset($_SESSION['room_size']) && $_SESSION['room_size'] == 'queen bed') echo 'selected'; ?>>Queen</option>
+                                <option value="double queen beds" <?php if (isset($_SESSION['room_size']) && $_SESSION['room_size'] == 'double queen beds') echo 'selected'; ?>>Double Queen Beds</option>
+                                <option value="king bed" <?php if (isset($_SESSION['room_size']) && $_SESSION['room_size'] == 'king bed') echo 'selected'; ?>>King</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="guests" class="form-label">Number of Guests:</label>
-                            <input type="number" id="guests" name="guests" class="form-control" min="1" max="5"
-                                required>
+                            <input type="number" id="guests" name="guests" class="form-control" min="1" max="5" required value="<?php if (isset($_SESSION['guests'])) echo $_SESSION['guests']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="checkin" class="form-label">Check-in Date:</label>
-                            <input type="date" id="checkin" name="checkin" class="form-control"
-                                min="<?php echo date('Y-m-d'); ?>" required onchange="toggleCheckout()">
+                            <input type="date" id="checkin" name="checkin" class="form-control" min="<?php echo date('Y-m-d'); ?>" required value="<?php if (isset($_SESSION['checkin'])) echo $_SESSION['checkin']; ?>" onchange="toggleCheckout(this.value, <?php echo $formSubmitted ? 'true' : 'false'; ?>)">
                         </div>
-                        <div class="mb-3" id="checkoutDiv" style="display: none;">
+                        <div class="mb-3" id="checkoutDiv" style="display: <?php echo $formSubmitted ? 'block' : 'none'; ?>;">
                             <label for="checkout" class="form-label">Check-out Date:</label>
-                            <input type="date" id="checkout" name="checkout" class="form-control" required>
+                            <input type="date" id="checkout" name="checkout" class="form-control" required value="<?php if (isset($_SESSION['checkout'])) echo $_SESSION['checkout']; ?>">
                         </div>
                         <button type="submit" class="btn btn-light">Make Reservation</button>
                         <a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
@@ -141,18 +142,31 @@
     </footer>
 
     <script>
-        function toggleCheckout() {
-            var checkinDate = document.getElementById('checkin').value;
+        function toggleCheckout(checkinValue, formSubmitted) {
             var checkoutDiv = document.getElementById('checkoutDiv');
             var checkoutInput = document.getElementById('checkout');
-            if (checkinDate !== "") {
-                var newCheckinDate = new Date(checkinDate);
-                newCheckinDate.setDate(newCheckinDate.getDate() + 1); // Add one day
-                var formattedDate = newCheckinDate.toISOString().substr(0, 10); // Format date as YYYY-MM-DD
-                checkoutInput.setAttribute('min', formattedDate);
+
+            if (formSubmitted) {
+                // If the form has been submitted with data, show both calendars
                 checkoutDiv.style.display = 'block';
+                if (checkinValue !== "") {
+                    var newCheckinDate = new Date(checkinValue);
+                    newCheckinDate.setDate(newCheckinDate.getDate() + 1); // Add one day
+                    var formattedDate = newCheckinDate.toISOString().substr(0, 10); // Format date as YYYY-MM-DD
+                    checkoutInput.setAttribute('min', formattedDate);
+                }
             } else {
-                checkoutDiv.style.display = 'none';
+                // If the form hasn't been submitted with data, toggle the checkout calendar
+                if (checkinValue !== "") {
+                    var newCheckinDate = new Date(checkinValue);
+                    newCheckinDate.setDate(newCheckinDate.getDate() + 1); // Add one day
+                    var formattedDate = newCheckinDate.toISOString().substr(0, 10); // Format date as YYYY-MM-DD
+                    checkoutInput.setAttribute('min', formattedDate);
+                    checkoutDiv.style.display = 'block';
+                } else {
+                    checkoutDiv.style.display = 'none';
+                    checkoutInput.value = ''; // Clear the checkout date input
+                }
             }
         }
     </script>
