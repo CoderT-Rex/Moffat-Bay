@@ -27,6 +27,7 @@ This file handles confirms a successful account reservation
 							-->
 					</div>
 				</a>
+
 				<div class="main-menu">
 					<ul>
 						<li><a href="index.php">Home</a></li>
@@ -53,7 +54,7 @@ This file handles confirms a successful account reservation
 				</div>
 			</div>
 		</div>
-
+    
 		<div class="restricted-container bg-light">
 			<div class="row spacer">
 				<div class="col-12 px-5 text-center">
