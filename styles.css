@@ -298,3 +298,11 @@ footer.text-light {
     border-radius: 5px;
     display: inline-block;
 }
+
+.reservation-item {
+    margin-bottom: 40px;
+}
+
+.reservation-item h4 {
+    margin-bottom: 10px;
+}
