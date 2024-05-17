@@ -44,7 +44,6 @@ This code allows a user to lookup an existing reservation
 						<li><a href="attractions.php">Attractions</a></li>
 						<li><a href="book.php">Reservations</a></li>
 						<?php
-						session_start(); // Start the session
 						// Check if the user is logged in
 						if (isset($_SESSION['user_id'])) {
 							echo '<li class="nav-item dropdown">';
