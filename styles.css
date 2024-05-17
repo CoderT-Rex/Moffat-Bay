@@ -44,9 +44,13 @@ body {
 }
 
 .btn-logout {
-	background-color: #ff1f1f !important;
+	background-color: #d1504b !important;
 	color: whitesmoke !important;
     float: right;
+}
+
+.btn-logout:hover {
+	border-color: #ca9d9c;
 }
 
 .main-logo {
@@ -58,7 +62,6 @@ body {
 .navbar {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 
 .main-menu ul {
 	list-style: none;
