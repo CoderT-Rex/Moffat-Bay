@@ -45,9 +45,8 @@ This code allows a user to lookup an existing reservation
 						<li><a href="book.php">Reservations</a></li>
 						<?php
 						if (isset($_SESSION['user_id'])) {
-							// If logged in, display profile and logout links
+							// If logged in, display profile link
 							echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-							echo '<li><a href="logout.php">Logout</a></li>';
 						} else {
 							// If not logged in, display the login link
 							echo '<li><a href="login.php">Login</a></li>';

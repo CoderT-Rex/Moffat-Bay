@@ -43,6 +43,12 @@ body {
 	color: whitesmoke !important;
 }
 
+.btn-logout {
+	background-color: #ff1f1f !important;
+	color: whitesmoke !important;
+    float: right;
+}
+
 .main-logo {
 	width: 40%;
 	height: 40%;

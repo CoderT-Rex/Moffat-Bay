@@ -39,7 +39,6 @@ This code handles displaying user information when they are logged in-->
 						if (isset($_SESSION['user_id'])) {
 							// If logged in, display profile and logout links
 							echo '<li><a href="profile.php">' . $_SESSION['user_id'] . '</a></li>';
-							echo '<li><a href="logout.php">Logout</a></li>';
 						} else {
 							// If not logged in, display the login link
 							echo '<li><a href="login.php">Login</a></li>';
@@ -129,6 +128,7 @@ This code handles displaying user information when they are logged in-->
 					$conn->close();
 					?>
 					<a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
+					<a href="logout.php" class="btn btn-logout">Logout</a>
 				</div>
 			</div>
 		</div>
