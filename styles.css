@@ -11,8 +11,9 @@ body {
     background-color: #000;
     min-height: 100vh;
     background-image: linear-gradient(to bottom, #37989B, #F4D791);
+    display: flex;
+    flex-direction: column;
 }
-
 .restricted-container {
 	max-width: 800px;
 	margin: 2rem auto;
@@ -221,12 +222,23 @@ footer.text-light {
     color: #333;
 }
 
-.sticky-footer {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+.sticky-flex {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.sticky-footer .main-content {
+
+.sticky-flex .main-content {
 	flex: 1;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+.sticky-bottom {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
 }
