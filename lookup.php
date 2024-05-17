@@ -114,11 +114,11 @@ This code allows a user to lookup an existing reservation
                                         </tr>
                                         <tr>
                                             <th scope="row">Cost per Night</th>
-                                            <td><?php echo $reservation['cost_per_night']; ?></td>
+                                            <td><?php echo '$' . $reservation['cost_per_night']; ?></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">Total Cost</th>
-                                            <td><?php echo $reservation['total_cost']; ?></td>
+                                            <td><?php echo '$' . $reservation['total_cost']; ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
