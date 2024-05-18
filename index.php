@@ -259,8 +259,8 @@ This code displays the landing page for the user
 									   https://unsplash.com/photos/a-bed-in-a-bedroom-next-to-a-window-WZ_stj4GWoU -->
 									<div class="carousel-caption d-none d-md-block">
 										<div class="caption-background">
-    										<h5 class="text-shadow-lg">Twin Beds</h5>
-    										<p class="text-shadow-lg">Our cozy twin bed lofts offer all the necessities
+    										<h5 class="text-shadow-lg">Full Beds</h5>
+    										<p class="text-shadow-lg">Our cozy full bed lofts offer all the necessities
     											while you explore the outdoors. Each room has a microwave, free Starlink
     											internet, towels, and toiletries.</p>
     									</div>
