@@ -90,11 +90,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="checkin" class="form-label">Check-in Date:</label>
-                            <input type="date" id="checkin" name="checkin" class="form-control" min="<?php echo date('Y-m-d'); ?>" required value="<?php if (isset($_SESSION['checkin'])) echo $_SESSION['checkin']; ?>" onchange="toggleCheckout(this.value, <?php echo $formSubmitted ? 'true' : 'false'; ?>)">
+                            <input type="date" id="checkin" name="checkin" class="form-control" min="<?php echo date('Y-m-d'); ?>" max="5000-12-31" required value="<?php if (isset($_SESSION['checkin'])) echo $_SESSION['checkin']; ?>" onchange="toggleCheckout(this.value, <?php echo $formSubmitted ? 'true' : 'false'; ?>)">
                         </div>
                         <div class="mb-3" id="checkoutDiv" style="display: <?php echo $formSubmitted ? 'block' : 'none'; ?>;">
                             <label for="checkout" class="form-label">Check-out Date:</label>
-                            <input type="date" id="checkout" name="checkout" class="form-control" required value="<?php if (isset($_SESSION['checkout'])) echo $_SESSION['checkout']; ?>">
+                            <input type="date" id="checkout" name="checkout" class="form-control" max="5000-12-31" required value="<?php if (isset($_SESSION['checkout'])) echo $_SESSION['checkout']; ?>">
                         </div>
                         <button type="submit" class="btn btn-light">Make Reservation</button>
                         <a href="lookup.php" class="btn btn-light">Reservation Lookup</a>
