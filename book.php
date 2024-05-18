@@ -169,6 +169,13 @@
                 }
             }
         }
+
+        window.onload = function () {
+            var checkinValue = document.getElementById('checkin').value;
+            if (checkinValue !== "") {
+                toggleCheckout(checkinValue, <?php echo $formSubmitted ? 'true' : 'false'; ?>);
+            }
+        }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
